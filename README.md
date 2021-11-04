@@ -1,6 +1,15 @@
 # WhatToDo-App
 App to search and list events - final Full Stack Web Dev project @ DCI Berlin, class of 2022
 
+- one sentence description: With this app you can list, find, filter and share events happening in Berlin at anytime!
+- (slightly) longer description: You can look up events by category and/or date. If you signup/login, you can also list your own events, share them and make a wishlist of events you like.
+- MVP (Minimal Viable Product):
+  - list of events on current day
+  - search by category
+  - search by date
+  - registration/login
+  - create event listing
+
 ## Usage
   - will this be the frontend repo?
   - need to create another backend repo?
@@ -32,15 +41,28 @@ Users should be able to:
   - HEADER: login/signup; create a listing --> KEY FEATURE
   - HEADER: User can search for events by category (drop-down menu) and/or by date (drop-down menu) --> KEY FEATURES
   - HEADER: User could also search by district (drop-down) and/or keywords (input field) --> NICE TO HAVE
-  - MAIN: Events displayed as cards; 4 in a row on Web App, 2 in a row on mobile, 20 results per page on both
-  - EVENT CARD: Image (incl. Date or duration), Title, Teaser, Category (strongest, only displayed here, more on event page), District, (Wishlist), GO button on Web (click on image on mobile)
-  - FOOTER: contact, disclaimer (not responsible for content correctness), privacy (what type of data we collect and what we do with it)
+  - MAIN: Events displayed as cards; 4 in a row on Web App, 1 or 2 in a row on mobile, infinite scroll-down --> KEY FEATURE 
+  - OR 20 results per page (web and mobile) --> NICE TO HAVE
+  - EVENT CARD: Image (incl. Date or duration), Title, Teaser, Category (only 1 displayed here, more on event page), District, (Wishlist Icon), GO button on Web (click on image on mobile) --> KEY FEATURES (apart from Wishlist)
+  - FOOTER: contact, disclaimer (not responsible for content correctness), privacy (what type of data we collect and what we do with it) --> NICE TO HAVE
   - EVENT PAGE: 
-    - WEB: Left 2/3: Image (incl. date/duration), Title, Description, Categories (all), (Wishlist); Right 1/3: Date & Times; Location (link to googlemaps); Price & Bookings (link to bookingpage); Contact Details: Telephone, email (link to website)
-    - MOBILE: 1 Row: first image, description with a show more drop down; then the Date & Times, Location etc. row 
-- case 2: user wants to log in or register
-  - SIGNUP/LOGIN: 
-- case 3: user is LOGGED in
+    - WEB: 
+      - Left 2/3: Image (incl. date/duration), Title, Description, Categories (all) --> KEY FEATURE; also Wishlist Icon and Map with Pin (GoogleMaps Integration) --> NICE TO HAVE
+      - Right 1/3: Date & Times; Location (link to googlemaps); Price & Bookings (link to bookingpage); Contact Details: Telephone, email (link to website)
+    - MOBILE: 1 Row: first image, title, start of description with a show more drop down; then the Date & Times, Location etc. row, Map
+- case 2: user wants to register --> KEY FEATURE
+  - SIGNUP --> REDIRECT TO LOGIN
+- case 3 user wants to login --> KEY FEATURE
+  - LOGIN: KEY FEATURE 
+- case 4: user wants to create a listing --> KEY FEATURE
+  - REDIRECT TO SIGNUP
+- case 5: user wants to make a wishlist --> NICE TO HAVE
+  - REDIRECT TO SIGNUP
+- case 6: user is LOGGED IN --> KEY FEATURE
+  - HEADER stays the same, plus logout
+  - MAIN: still defaults to events on that day
+  - above events, Create Listing component, maybe display only a bit and hide the rest in a show more
+  - NICE TO HAVE: Wishlist
 
 #### Questions: 
 - How is the sequence of results displayed? first listing, date, best category fit, alphabet, free first
@@ -59,14 +81,18 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 ## My process
 ### Built with
+- Figma
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
+- CSS, Flexbox, Grid
+- SCSS
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- React
+- (React Native)
+- Node.js
+- Express
+- MongoDB/Mongo Atlas/mongoose
+- Git, GitHub, Git Projects
+- Heroku
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 ### What I learned
 Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
