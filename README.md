@@ -20,6 +20,7 @@ App to search and list events - final Full Stack Web Dev project @ DCI Berlin, c
 
 ## Table of contents
 - [Overview](#overview)
+  - [Team](#team)
   - [The idea](#the-idea)
   - [Screenshot](#screenshot)
   - [Links](#links)
@@ -32,6 +33,12 @@ App to search and list events - final Full Stack Web Dev project @ DCI Berlin, c
 - [Acknowledgments](#acknowledgments)
 
 ## Overview
+### Team
+
+- Maria Glück ()
+- Kalaya Chatelain (https://github.com/Kaalaayaa)
+- Maxie Haufe (https://github.com/Mxx1029)
+
 ### The idea
 
 Users should be able to:
