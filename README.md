@@ -5,8 +5,8 @@ App to search and list events - final Full Stack Web Dev project @ DCI Berlin, c
 - (slightly) longer description: You can look up events by category and/or date. If you signup/login, you can also list your own events, share them and make a wishlist of events you like.
 - MVP (Minimal Viable Product):
   - list of events on current day
-  - search by category
-  - search by date
+  - filter by category
+  - filter by date
   - registration/login
   - create event listing
 
@@ -35,22 +35,27 @@ App to search and list events - final Full Stack Web Dev project @ DCI Berlin, c
 ## Overview
 ### Team
 
-- Maria Glück ()
+- Maria Glück (https://github.com/mariagluck)
+  - Role: Lead Frontend Mobile Developer
 - Kalaya Chatelain (https://github.com/Kaalaayaa)
+  - Role: Lead Frontend Web Developer
 - Maxie Haufe (https://github.com/Mxx1029)
+  - Role: Lead Backend Developer, Repository Maintainer
+- Project Management is shared
 
 ### The idea
 
 Users should be able to:
 - View the optimal layout for the app depending on their device's screen size
+- ideally work with React Native OR Progressive Web Apps to create an installable app
 
 #### USER FLOW: 
 - case 1: user is NOT logged in
   - LANDING PAGE MAIN: events happening that current day as a list --> KEY FEATURE
   - OR events as pins on a map (you can switch between listings view and map view) --> NICE TO HAVE
   - HEADER: login/signup; create a listing --> KEY FEATURE
-  - HEADER: User can search for events by category (drop-down menu) and/or by date (drop-down menu) --> KEY FEATURES
-  - HEADER: User could also search by district (drop-down) and/or keywords (input field) --> NICE TO HAVE
+  - HEADER: User can filter for events by category (drop-down menu) and/or by date (drop-down menu) --> KEY FEATURES
+  - HEADER: User could also filter by district (drop-down) and/or search by keywords (input field) --> NICE TO HAVE
   - MAIN: Events displayed as cards; 4 in a row on Web App, 1 or 2 in a row on mobile, infinite scroll-down --> KEY FEATURE 
   - OR 20 results per page (web and mobile) --> NICE TO HAVE
   - EVENT CARD: Image (incl. Date or duration), Title, Teaser, Category (only 1 displayed here, more on event page), District, (Wishlist Icon), GO button on Web (click on image on mobile) --> KEY FEATURES (apart from Wishlist)
@@ -61,13 +66,13 @@ Users should be able to:
       - Right 1/3: Date & Times; Location (link to googlemaps); Price & Bookings (link to bookingpage); Contact Details: Telephone, email (link to website)
     - MOBILE: 1 Row: first image, title, start of description with a show more drop down; then the Date & Times, Location etc. row, Map
 - case 2: user wants to register --> KEY FEATURE
-  - SIGNUP --> REDIRECT TO LOGIN
+  - SIGNUP --> redirect to LOGIN
 - case 3 user wants to login --> KEY FEATURE
-  - LOGIN: KEY FEATURE 
+  - LOGIN --> redirect to LANDING PAGE
 - case 4: user wants to create a listing --> KEY FEATURE
-  - REDIRECT TO SIGNUP
+  - GO TO SIGNUP --> redirect to SIGNUP
 - case 5: user wants to make a wishlist --> NICE TO HAVE
-  - REDIRECT TO SIGNUP
+  - GO TO SIGNUP --> redirect to SIGNUP
 - case 6: user is LOGGED IN --> KEY FEATURE
   - HEADER stays the same, plus logout
   - MAIN: still defaults to events on that day
@@ -97,7 +102,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - SCSS
 - Mobile-first workflow
 - React
-- (React Native)
+- (React Native OR Progressive Web Apps)
 - Node.js
 - Express
 - MongoDB/Mongo Atlas/mongoose
