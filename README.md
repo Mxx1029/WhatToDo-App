@@ -81,6 +81,7 @@ Users should be able to:
   - above events, CREATE LISTING component, maybe display only a bit and hide the rest in a show more
   - adding hashtags (like keywords - additional to categories) --> NICE TO HAVE
   - NICE TO HAVE: Wishlist
+- case 7: user gets a 404 page --> NICE TO HAVE
 
 ### Categories 
 - to filter events by
