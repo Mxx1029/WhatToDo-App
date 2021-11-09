@@ -79,6 +79,20 @@ Users should be able to:
   - above events, Create Listing component, maybe display only a bit and hide the rest in a show more
   - NICE TO HAVE: Wishlist
 
+#### Categories (to filter events by)
+1. Free
+2. Workshop
+3. Family
+4. Market
+5. Food
+6. Reading
+7. Opening
+8. Exhibition
+9. Performing Arts
+10. Film
+11. Music
+12. Party
+
 #### Questions: 
 - How is the sequence of results displayed? first listing, date, best category fit, alphabet, free first
 
