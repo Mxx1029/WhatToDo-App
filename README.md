@@ -59,7 +59,7 @@ Users should be able to:
   - HEADER: User can filter for events by category (drop-down menu) and/or by date (drop-down menu) --> KEY FEATURES
   - HEADER: User could also filter by district (drop-down) and/or search by keywords (input field) --> NICE TO HAVE
   - MAIN: Events displayed as cards; 4 in a row on Web App, 1 or 2 in a row on mobile, infinite scroll-down --> KEY FEATURE 
-  - OR 20 results per page (web and mobile) --> NICE TO HAVE
+  - OR 20 results per page (web and mobile) AND on mobile change from 2 cards per row view (grid) to 1 card per row view (single)  --> NICE TO HAVE
   - EVENT CARD: Image (incl. Date or duration), Title, Teaser, Category (only 1 displayed here, more on event page), District, (Wishlist Icon), GO button on Web (click on image on mobile) --> KEY FEATURES (apart from Wishlist)
   - FOOTER: contact, disclaimer (not responsible for content correctness), privacy (what type of data we collect and what we do with it) --> NICE TO HAVE
   - EVENT PAGE: 
@@ -78,7 +78,8 @@ Users should be able to:
 - case 6: user is LOGGED IN --> KEY FEATURE
   - HEADER stays the same, plus logout
   - MAIN: still defaults to events on that day
-  - above events, Create Listing component, maybe display only a bit and hide the rest in a show more
+  - above events, CREATE LISTING component, maybe display only a bit and hide the rest in a show more
+  - adding hashtags (like keywords - additional to categories) --> NICE TO HAVE
   - NICE TO HAVE: Wishlist
 
 ### Categories 
