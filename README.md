@@ -22,6 +22,8 @@ App to search and list events - final Full Stack Web Dev project @ DCI Berlin, c
 - [Overview](#overview)
   - [Team](#team)
   - [The idea](#the-idea)
+  - [User flow](#user-flow)
+  - [Categories](#categories)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
@@ -49,7 +51,7 @@ Users should be able to:
 - View the optimal layout for the app depending on their device's screen size
 - ideally work with React Native OR Progressive Web Apps to create an installable app
 
-#### USER FLOW: 
+### User flow 
 - case 1: user is NOT logged in
   - LANDING PAGE MAIN: events happening that current day as a list --> KEY FEATURE
   - OR events as pins on a map (you can switch between listings view and map view) --> NICE TO HAVE
@@ -79,7 +81,8 @@ Users should be able to:
   - above events, Create Listing component, maybe display only a bit and hide the rest in a show more
   - NICE TO HAVE: Wishlist
 
-#### Categories (to filter events by)
+### Categories 
+- to filter events by
 1. Free
 2. Workshop
 3. Family
