@@ -117,12 +117,12 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Git workflow
 1. Create issue in frontend repo AND/OR backend-repo (make note of issue number, which is set automaically by GitHub)
 2. Set issue to “in progress”, assign yourself (or someone else)
-3. Create branch for the issue like this: `git checkout -b issue#20-user-login` (creates local branch on your machine)
+3. Create branch for the issue like this: `git checkout -b issue#20-add-git-workflow-to-readme` (creates local branch on your machine)
 4. Work in that branch
 5. When done, `git commit -m “issue#20 Add user login on backend`
-6. `git push -u origin issue#20-user-login` (create remote branch on GitHub and push your work there)
-7. On GitHub create pull request from `issue#20-user-login` to main
-8. Open pull request and in sidebar on the right link under a) Projects: "@Mxx1029's WhatToDo App tasks" and b) Linked issues: issue#20 
+6. `git push -u origin issue#20-add-git-workflow-to-readme` (create remote branch on GitHub and push your work there)
+7. On GitHub create pull request from `issue#20-add-git-workflow-to-readme` to main
+8. Open pull request and in sidebar on the right link under a) Projects: "@Mxx1029's WhatToDo App tasks" and b) Linked issues: issue#20 ("Documenation: add git workflow to README.md (frontend repo)")
 9. Someone reviews
 10. Merge
 11. Delete the branch on GitHub and locally
