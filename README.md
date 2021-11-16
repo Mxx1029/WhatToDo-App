@@ -26,8 +26,7 @@ App to search and list events - final Full Stack Web Dev project @ DCI Berlin, c
   - [Categories](#categories)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [Process](#process)
-  - [Git workflow](#git-workflow)
+- [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
@@ -50,6 +49,7 @@ App to search and list events - final Full Stack Web Dev project @ DCI Berlin, c
 
 Users should be able to:
 - View the optimal layout for the app depending on their device's screen size
+- ideally work with React Native OR Progressive Web Apps to create an installable app
 
 ### User flow 
 - case 1: user is NOT logged in
@@ -113,20 +113,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Links
 - Solution URL: [Add solution URL here](https://your-solution-url.com) 
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com) --> HEROKU link here!
-## Process
-### Git workflow
-1. Create issue in frontend repo AND/OR backend-repo (make note of issue number, which is set automaically by GitHub)
-2. Set issue to “in progress”, assign yourself (or someone else)
-3. Create branch for the issue like this: `git checkout -b issue#20-add-git-workflow-to-readme` (creates local branch on your machine)
-4. Work in that branch
-5. When done, `git commit -m “issue#20 Add user login on backend`
-6. `git push -u origin issue#20-add-git-workflow-to-readme` (create remote branch on GitHub and push your work there)
-7. On GitHub create pull request from `issue#20-add-git-workflow-to-readme` to main
-8. Open pull request and in sidebar on the right link under a) Projects: "@Mxx1029's WhatToDo App tasks" and b) Linked issues: issue#20 ("Documenation: add git workflow to README.md (frontend repo)")
-9. Someone reviews
-10. Merge
-11. Delete the branch on GitHub and locally
-12. Repeat :)
+## My process
 ### Built with
 - Figma
 - Semantic HTML5 markup
@@ -134,6 +121,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - SCSS
 - Mobile-first workflow
 - React
+- (React Native OR Progressive Web Apps)
 - Node.js
 - Express
 - MongoDB/Mongo Atlas/mongoose
