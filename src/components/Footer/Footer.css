@@ -1,0 +1,55 @@
+.container {
+    margin: 80px 400px 80px 400px;
+    width: 1000px;
+    margin: 0 auto;
+    line-height: 2em;
+    display: flex;
+}
+.footer {
+    background-color: black;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    padding: 20px 10px 10px 10px;
+    margin: 0;
+}
+
+.logo-footer {
+    color: #A79FFB;
+    justify-self: start;
+    cursor: pointer;
+}
+
+.links-copyright {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.links-copyright p {
+    color: white;
+    margin: 0;
+    text-decoration: underline;
+}
+
+
+
+.contact{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  
+}
+
+.contact p {
+    color: white;
+    margin: 0;
+}
+
+.contact-whattodo {
+    font-size: 1.3em;
+    text-decoration: underline #A79FFB 2px;
+}

@@ -1,0 +1,36 @@
+
+.navbar {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo {
+        color: black;
+        justify-self: start;
+        cursor: pointer;
+    } 
+    .nav {
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }  
+    .btn-navbar{
+        background-color: white;
+        border-radius: 15px;
+        width: 120px;
+        height: 30px;
+        &:hover {
+           color: #fff!important;
+        border-color: #000;
+        background-color: #000;
+        transition: color .25s ease-in-out;
+        transition: background-color .25s ease-in-out; 
+        }
+    
+    }
+    .heart{
+        font-size: 50px;
+    }
+
+}
