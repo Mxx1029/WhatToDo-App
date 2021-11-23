@@ -1,9 +1,10 @@
 import './App.css';
+import ListingPage from "./components/ListingPage/ListingPage.jsx";
 
 function App() {
   return (
     <div className="App">
-      Hello
+      <ListingPage />
     </div>
   );
 }
