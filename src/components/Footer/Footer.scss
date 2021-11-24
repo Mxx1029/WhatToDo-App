@@ -1,3 +1,14 @@
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 150px; 
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .container {
     margin: 80px 400px 80px 400px;
     width: 1000px;
@@ -5,16 +16,7 @@
     line-height: 2em;
     display: flex;
 }
-.footer {
-    background-color: black;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: auto;
-    padding: 20px 10px 10px 10px;
-    margin: 0;
-}
+
 
 .logo-footer {
     color: #A79FFB;

@@ -1,5 +1,5 @@
-import "./Footer.css"
-import logo from "../../images/WTD-logo-color.png"
+import "./Footer.scss";
+import logo from "../../images/WTD-logo-color.png";
 
 export default function Footer(){
 
