@@ -1,0 +1,57 @@
+main {
+    margin-top: 30px;
+}
+.event-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-rows: 1.2fr 1.2fr 0.6fr;
+    grid-auto-columns: 1fr;
+    gap: 0px 6px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "image info"
+      "about ."
+      "map .";
+    width: 95%;
+    height: 100%;
+    margin: auto ;
+
+    .event-image { 
+        grid-area: image; 
+        img {
+          width: 600px;
+          object-fit: cover;
+          margin: 0;
+    }
+
+    }
+
+    .event-info { 
+        grid-area: info; 
+        padding-left: 30px;
+    }
+
+    .event-about { grid-area: about; }
+
+    .event-Map { grid-area: map; }
+
+    
+    .dates, 
+    .location,
+    .price,
+    .contact-i {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: 6px;
+        border-top: 1px solid black;
+
+    }
+    .contact-i {
+      border-bottom: 1px solid black;  
+    }
+}
+  
+  
+  
