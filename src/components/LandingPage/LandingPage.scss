@@ -1,6 +1,20 @@
+.search-nav {
+    display: block;
+}
+
 .top {
     margin: 80px 400px 80px 400px;
     width: 1000px;
     margin: 0 auto;
     line-height: 2em;
+}
+
+main {
+    width: 1050px; //temporary data
+    min-height: calc(100vh - 70px);
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+   
 }

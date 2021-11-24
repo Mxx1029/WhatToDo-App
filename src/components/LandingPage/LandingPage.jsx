@@ -1,6 +1,7 @@
 import Header from "../NavBar/NavBar"
 import Footer from "../Footer/Footer"
-import SearchNav from "../SearchNav/SearchNav.jsx";
+import SearchNav from "../SearchNav/SearchNav";
+import Card from "../Card/Card";
 import "./LandingPage.scss"
 
 
@@ -12,8 +13,22 @@ export default function LandingPage(){
                 <Header />
                 <SearchNav />
             </div>
+            <main>
+                <Card /> 
+                <Card /> 
+                <Card /> 
+                <Card /> 
+                <Card /> 
+                <Card /> 
+                <Card /> 
+                <Card />
+                <Card /> 
+                <Card /> 
+                <Card /> 
+                <Card />
+            </main>
+           
             <Footer />
-            
         </div>
     )
 }

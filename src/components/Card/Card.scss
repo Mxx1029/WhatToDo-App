@@ -1,0 +1,72 @@
+.card-container {
+  position: relative;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 40.34%;
+  height: 350px;
+  width: 230px;
+  left: 0px;
+  top: 0px;
+  border-radius: 12px;
+  margin: 30px 9px 5px 20px;
+  display: block;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;//we can remove this if we prefer
+  
+  .image-container {
+    display: block;
+    height: 170px;
+  }
+
+  .event-img {
+    height: 170px;
+    width: 230px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .event-date {
+    position: absolute;
+    top: 135px;
+    left: 50px;
+    right: 50px;
+    padding: 5px 15px;
+    background-color: white;
+    font-size: 11px;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+  }
+
+  .card-text {
+    padding: 8px; //or 5px 0; if we decide to remove box-shadow
+
+    p {
+    font-size: 12px;
+    }
+  }
+
+  .card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items:center;
+    padding: 8px;
+
+    p {
+      font-size: 12px;
+      width: min-content;
+    }
+    button {
+      border-radius: 50%;
+      border: none;
+      padding: 8px 5px;
+      background-color: #c9c5fc;
+      font-size: 10px;
+    }
+    button:active {
+        background-color: #A79FFB;
+        box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+        /* Lowering the shadow */
+    }
+  }
+}
