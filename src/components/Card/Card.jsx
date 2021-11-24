@@ -1,6 +1,6 @@
 import React from "react";
 import eventImg from "../../images/mockup_event_1.jpeg";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
+import FavoriteButton from "./ButtonFavorite";
 
 import "./Card.scss";
 
@@ -19,7 +19,7 @@ export default function Card() {
         </p>
         <div className="card-footer">
           <p>THEATER</p>
-          <FaRegHeart />
+          <FavoriteButton />
           <button>GO</button>
         </div>
       </div>
