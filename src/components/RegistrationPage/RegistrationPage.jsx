@@ -1,6 +1,6 @@
-import Header from "../NavBar"
+import Header from "../NavBar/NavBar";
 import MainRegistration from "./MainRegistration"
-import Footer from "../Footer"
+import Footer from "../Footer/Footer";
 import "./RegistrationPage.css"
 
 

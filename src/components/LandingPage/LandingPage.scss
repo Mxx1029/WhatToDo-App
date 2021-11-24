@@ -1,18 +1,31 @@
 .search-nav {
     display: block;
-}
-
-.top {
+    
+    .top {
     margin: 80px 400px 80px 400px;
     width: 1000px;
     margin: 0 auto;
     line-height: 2em;
+   }
+}
+
+
+.search-results {
+    width: 1050px; 
+    margin: 0 auto;
+
+    h2 {
+        padding-left: 30px;
+        padding-top: 15px;
+        margin-bottom: 0;
+    }
 }
 
 main {
     width: 1050px; //temporary data
     min-height: calc(100vh - 70px);
     margin: auto;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
