@@ -1,5 +1,5 @@
-import "./Footer.css"
-import logo from "../../images/WTD-logo-color.png"
+import "./Footer.css";
+import logo from "../../images/WTD-logo-color.png";
 
 export default function Footer(){
 
@@ -21,5 +21,5 @@ export default function Footer(){
                 </div>
                 </div>
         </div>
-    )
+    );
 }

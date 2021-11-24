@@ -1,9 +1,88 @@
-input[type=text]{
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+.form{
+    margin-top: 100px;
+    h1 {
+			text-align: center;
+    }
+		label{
+			margin: 0;
+		}
+    input[type=text]{
+    	width: 100%;
+			height: 25px;
+			margin-bottom: 30px;
+    	border: 0.5px solid #949494;
+    	display: inline-block;
+    	border-top-style: hidden;
+    	border-right-style: hidden;
+    	border-left-style: hidden;
+    	border-bottom-style: groove #949494;
+    	outline: none;
+    	box-sizing: border-box;
+    	&:focus, :active{
+        border-color: transparent;
+        border-bottom: 2px solid #A79FFB;
+    	}
+    }
+
+		.container{
+			width: 600px;
+			border-radius: 5px;
+			padding:20px;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-gap: 20px;
+			margin: 0;
+			.hide-box {
+				display: none;
+			}
+			.categ-radio {
+				text-align: center;
+				padding-bottom: 5px;
+				background-color: #E6E3FF;
+				width: 110px;
+				height: 25px;
+				cursor: pointer;
+				transition: all 0.3s ease-in;
+			}
+			.type{
+				font-size: 10px;
+				font-weight: bold;
+			}
+			
+
+		}
+		input[type=radio]:checked + .categ-radio{
+				border: 1px solid blue;
+			}
+    .summary{
+    	width: 100%;
+    	height: 41px;
+    	padding: 5px 10px;
+    	border-radius: 3px;
+    	border: 0.5px solid #949494;
+    	display: inline-block;
+    	box-sizing: border-box;
+			outline: none;
+    	&:focus, :active{
+    		border-color: transparent;
+    		border: 2px solid #A79FFB;
+    	}
+    }
+
+    .description{
+    	width: 100%;
+    	height: 140px;
+    	padding: 5px 10px;
+			margin-top: 20px;
+    	border-radius: 3px;
+    	border: 0.5px solid #949494;
+    	display: inline-block;
+    	box-sizing: border-box;
+			outline: none;
+    	&:focus, :active{
+        border-color: transparent;
+        border: 2px solid #A79FFB;
+    	}
+    }
+
 }
