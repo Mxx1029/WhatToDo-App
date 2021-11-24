@@ -13,6 +13,9 @@ export default function LandingPage(){
                 <Header />
                 <SearchNav />
             </div>
+            <div className="search-results">
+                <h2>WHAT TO DO ...TODAY?</h2>
+            </div>
             <main>
                 <Card /> 
                 <Card /> 

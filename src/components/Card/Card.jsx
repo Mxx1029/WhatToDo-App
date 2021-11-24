@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import eventImg from "../../images/mockup_event_1.jpeg";
 import FavoriteButton from "./ButtonFavorite";
 
@@ -20,7 +21,7 @@ export default function Card() {
         <div className="card-footer">
           <p>THEATER</p>
           <FavoriteButton />
-          <button>GO</button>
+          <button as={Link} to="/event-page">GO</button>
         </div>
       </div>
     </div>
