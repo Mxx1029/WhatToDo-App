@@ -5,21 +5,22 @@ import FavoriteButton from "./ButtonFavorite";
 
 import "./Card.scss";
 
-export default function Card() {
+export default function Card({event}) {
+    const { name, image, category, start_date, end_date, summary } = event;
+   
   return (
     <div className="card-container">
       <div className="image-container">
-        <img src={eventImg} alt="" className="event-img" />
-        <p className="event-date">13 NOV</p>
+        <img src={image} alt="" className="event-img" />
+        <p className="event-date">{start_date}</p>
       </div>
       <div className="card-text">
-        <h5>mykki blanco at volksbühne</h5>
+        <h5>{name}</h5>
         <p>
-          Instead of a DJ, the live show will, for the first time, feature a
-          live band with background singers.
+         {summary}
         </p>
         <div className="card-footer">
-          <p>THEATER</p>
+          <p>{category}</p>
           <FavoriteButton />
           <Link to="/event-page" >
            <button >GO</button>
