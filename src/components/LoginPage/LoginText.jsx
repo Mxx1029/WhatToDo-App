@@ -1,4 +1,4 @@
-import "./LoginText.css"
+import "./LoginText.scss"
 import { FaArrowRight } from "react-icons/fa";
 
 export default function LoginText(){

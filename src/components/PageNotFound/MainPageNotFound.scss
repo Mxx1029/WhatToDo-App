@@ -1,8 +1,11 @@
 .main-page-not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    h1{
+    margin: 55px auto;
+    .title{
         font-size: 5em;
     }
     h2 {
@@ -13,9 +16,11 @@
         border-radius: 5px;
     }
     p {
+        margin-bottom: 0;
         font-size: 18px;
     }
-    button {
+    .what-to-do-button {
+        margin-top: 10px;
         font-size: 18px;
         color: #fff;
         border:none;
@@ -34,4 +39,5 @@
         transition: background-color .25s ease-in-out;
     }
     }
+
 }

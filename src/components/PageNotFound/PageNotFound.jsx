@@ -1,6 +1,6 @@
-import NavBarBroken from "./NavBarBroken"
+import NavBarBroken from "./NavBarBroken.jsx"
 import MainPageNotFound from "./MainPageNotFound"
-import Footer from "../Footer"
+import Footer from "../Footer/Footer"
 import "./PageNotFound.scss"
 
 

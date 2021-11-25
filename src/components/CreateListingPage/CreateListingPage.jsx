@@ -1,10 +1,10 @@
 import Header from "../NavBar/NavBar"
 import Footer from "../Footer/Footer";
 import Form from "./Form";
-import "./ListingPage.scss"
+import "./CreateListingPage.scss"
 
 
-export default function ListingPage(){
+export default function CreateListingPage(){
 
     return(
         <div className="search-nav">
