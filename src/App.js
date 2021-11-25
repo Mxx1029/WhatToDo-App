@@ -22,8 +22,7 @@ function App() {
                <Route path="/login" caseSensitive={false} element={<LoginPage/>} />
                <Route path="/create-listing" caseSensitive={false} element={<ListingPage/>} />
              </Routes>
-           </Router>
-         );    
+           </Router> 
     </div>
   );
 }

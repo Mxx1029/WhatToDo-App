@@ -21,7 +21,9 @@ export default function Card() {
         <div className="card-footer">
           <p>THEATER</p>
           <FavoriteButton />
-          <button as={Link} to="/event-page">GO</button>
+          <Link to="/event-page" >
+           <button >GO</button>
+          </Link>
         </div>
       </div>
     </div>
