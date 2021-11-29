@@ -10,10 +10,10 @@ export default function Card({event}) {
     const { name, image, category, start_date, end_date, summary } = event;
 
     //Dates: start date
-    const startMomentStr = moment(start_date).format('D MMM');
-    const startMomentStrDay = moment(start_date).format('D ');
+    const startDayStr = moment(start_date).format('D MMM');
+    const startDayStrDay = moment(start_date).format('D ');
     //end date:
-    const endMomentStr = moment(end_date).format(' - D MMM');
+    const endDayStr = moment(end_date).format(' - D MMM');
 
     //print a random default image of the array db
     let defaultImage = eventDefaultDB[Math.floor(Math.random()*eventDefaultDB.length)];
@@ -28,13 +28,13 @@ export default function Card({event}) {
           : <img src={defaultImage} alt="" className="event-img" />
         }
          {/* Event Date  */}
-        {startMomentStr === endMomentStr
-          ? <p className="event-date">{startMomentStr} </p>
-          : moment(startMomentStr).isSame(endMomentStr,'month') 
-              ? <p className="event-date">{startMomentStrDay}{endMomentStr}</p>
-              : <p className="event-date">{startMomentStr}{endMomentStr}</p>
+        {startDayStr === endDayStr
+          ? <p className="event-date">{startDayStr} </p>
+          : moment(startDayStr).isSame(endDayStr,'month') 
+              ? <p className="event-date">{startDayStrDay}{endDayStr}</p>
+              : <p className="event-date">{startDayStr}{endDayStr}</p>
         }  
-        
+
       </div>
       <div className="card-text">
         <h5 className="card-title">{name}</h5>
