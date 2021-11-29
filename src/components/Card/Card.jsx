@@ -15,12 +15,10 @@ export default function Card({event}) {
         <p className="event-date">{start_date}</p>
       </div>
       <div className="card-text">
-        <h5>{name}</h5>
-        <p>
-         {summary}
-        </p>
+        <h5 className="card-title">{name}</h5>
+        <p className="card-summary">{summary}</p>
         <div className="card-footer">
-          <p>{category}</p>
+          <p className="card-category"><span>{category}</span></p>
           <FavoriteButton />
           <Link to="/event-page" >
            <button >GO</button>

@@ -13,6 +13,10 @@
     display: block;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;//we can remove this if we prefer
     
+    span {
+      padding: 0;
+      box-shadow: inset 0 -6px 0 0 #A89CFB;
+    }
     .image-container {
       display: block;
       height: 170px;
@@ -40,9 +44,15 @@
   
     .card-text {
       padding: 8px; //or 5px 0; if we decide to remove box-shadow
+      .card-title {
+        height: 30px;
+      }
       h5 {
         margin-top: 15px;
         margin-bottom: 10px;
+      }
+      .card-summary {
+        height: 40px;
       }
       p {
       font-size: 12px;
@@ -50,12 +60,17 @@
     }
   
     .card-footer {
+      position: relative;
+      bottom: 5px;
       display: flex;
       flex-direction: row;
       justify-content:space-between;
       align-items:center;
       padding: 8px;
-  
+      
+      .card-category {
+        width: 120px;
+      }
       p {
         font-size: 12px;
         width: min-content;
