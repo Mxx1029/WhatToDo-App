@@ -1,6 +1,5 @@
 import "./NavBar.scss"
 import logo from "../../images/what toDo.png"
-import heart from "../../images/heart.png";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 export default function NavBar(){
