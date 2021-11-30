@@ -10,7 +10,7 @@ import {FaInfo} from "react-icons/fa";
 import eventImage from "../../images/mockup_event_0.jpeg";
 
 
-export default function EventPage(){
+export default function EventPage({event}){
 
     return(
         <div className="search-nav">
