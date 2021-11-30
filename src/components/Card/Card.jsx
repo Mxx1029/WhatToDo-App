@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import EventDateCard from "./EventDateCard";
-import {eventDefaultDB} from "../../images/defaultImagesDB/defaultImagesDB";
+import {eventDefaultImages} from "../../images/defaultImagesDB/defaultImagesDB";
 import FavoriteButton from "./ButtonFavorite";
 
 import "./Card.scss";
@@ -11,7 +11,7 @@ export default function Card({event}) {
 
 
   //print a random default image of the array db
-  let defaultImage = eventDefaultDB[Math.floor(Math.random()*eventDefaultDB.length)];
+  let defaultImage = eventDefaultImages[Math.floor(Math.random()*eventDefaultImages.length)];
 
   
    

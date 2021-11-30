@@ -6,7 +6,7 @@ import eventdefault5 from "./event_default_5.jpg";
 import eventdefault6 from "./event_default_6.jpg";
 
 
-export const eventDefaultDB = [
+export const eventDefaultImages = [
     eventdefault1,
     eventdefault2,
     eventdefault3,
