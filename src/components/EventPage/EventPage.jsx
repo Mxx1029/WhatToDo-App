@@ -1,16 +1,23 @@
+import React from "react";
+import axios from "axios";
 import Header from "../NavBar/NavBar";
 import Footer from "../Footer/Footer";
 import SearchNav from "../SearchNav/SearchNav";
 
+
 import "./EventPage.scss";
+//icons
 import {FaCalendarAlt} from "react-icons/fa";
 import {FaMapMarkerAlt} from "react-icons/fa";
 import {FaTicketAlt} from "react-icons/fa";
 import {FaInfo} from "react-icons/fa";
-import eventImage from "../../images/mockup_event_0.jpeg";
+//import eventImage from "../../images/mockup_event_0.jpeg";
 
 
 export default function EventPage({event}){
+    //const [eventData, setEventData] = useState([]);
+    const { name, image, category, summary, start_date, end_date } = event;
+
 
     return(
         <div className="search-nav">
@@ -21,7 +28,7 @@ export default function EventPage({event}){
             <main>
              <div className="event-container">
                 <div className="event-image">
-                    <img src={eventImage} alt="" />
+                    <img src={event.image} alt="" />
                     <p className="event-date">13 NOV</p>
                 </div>
                 <div className="event-info">

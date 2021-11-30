@@ -46,18 +46,7 @@ export default function LandingPage(){
             <main>
               {events?.map(event => 
                  <Card key={event._id} 
-                       event={event} />)}   
-           
-                  {/* <Card 
-                  //    name={`${eventList.title}`}
-                  //    eventImage={eventList.picture.thumbnail}
-                  //    date={eventList.date}
-                  //    about={eventList.email}
-                  //    cathegory={eventList.cathegory}
-                  //    key={eventList.id}  
-                     /> 
-              */}
-                
+                       event={event} />)}         
             </main>
            
             <Footer />
