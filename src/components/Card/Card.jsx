@@ -30,7 +30,7 @@ export default function Card({event}) {
         <div className="card-footer">
           <p className="card-category"><span>{category}</span></p>
           <FavoriteButton />
-          <Link to="/event-page">
+          <Link to={"/event/" + event._id} >
            <button>GO</button>
           </Link>
         </div>

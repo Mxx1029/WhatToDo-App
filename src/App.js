@@ -16,7 +16,7 @@ function App() {
            <Router>
              <Routes>
                <Route path="/" caseSensitive={false} element={<LandingPage/>} />
-               <Route path="/event-page" caseSensitive={false} element={<EventPage/>} />
+               <Route path="/event/:id" caseSensitive={false} element={<EventPage/>} />
                <Route path="*" caseSensitive={false} element={<PageNotFound/>} />
                <Route path="/register" caseSensitive={false} element={<RegistrationPage/>} />
                <Route path="/login" caseSensitive={false} element={<LoginPage/>} />
