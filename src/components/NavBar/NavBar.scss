@@ -5,40 +5,33 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-    .logo {
-    color: black;
-    justify-self: start;
-    cursor: pointer;
-    }
 
+    .logo {
+        color: black;
+        justify-self: start;
+        cursor: pointer;
+        padding-top: 20px;
+    }
+    
     .nav {
         width: 40%;
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
 
-    .heart {
-        font-size: 3em;
-    }
-    
-    .btn-navbar{
-        background-color: $color-white;
-        border-radius: 15px;
-        width: 120px;
-        height: 30px;
-        
-    }
-    
-    .btn-navbar:hover {
-        color: #fff!important;
-        border-color: #000;
-        background-color: #000;
-        transition: color .25s ease-in-out;
-        transition: background-color .25s ease-in-out;
-    }
+        .btn-navbar{
+            background-color: $color-white;
+            border-radius: 15px;
+            width: 120px;
+            height: 30px;
+            &:hover {
+                color: #fff!important;
+                border-color: #000;
+                background-color: #000;
+                transition: color .25s ease-in-out;
+                transition: background-color .25s ease-in-out;
+            }
+        }
 
+    }
 }
-
-
