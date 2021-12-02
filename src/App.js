@@ -3,9 +3,9 @@ import  { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './components/LandingPage/LandingPage';
 import Event from "./components/EventPage/Event";
 import PageNotFound from "./components/PageNotFound/MainPageNotFound";
-import ListingPage from "./components/ListingPage/ListingPage.jsx";
 import RegistrationPage from "./components/RegistrationPage/RegistrationPage";
 import LoginPage from "./components/LoginPage/LoginPage";
+import CreateListingPage from "./components/CreateListingPage/CreateListingPage";
 
 import './App.css';
 
@@ -20,9 +20,9 @@ function App() {
                <Route path="*" caseSensitive={false} element={<PageNotFound/>} />
                <Route path="/register" caseSensitive={false} element={<RegistrationPage/>} />
                <Route path="/login" caseSensitive={false} element={<LoginPage/>} />
-               <Route path="/create-listing" caseSensitive={false} element={<ListingPage/>} />
+               <Route path="/create-listing" caseSensitive={false} element={<CreateListingPage/>} />
              </Routes>
-           </Router> 
+           </Router>    
     </div>
   );
 }
