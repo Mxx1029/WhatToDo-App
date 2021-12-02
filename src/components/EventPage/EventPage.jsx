@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router";
 import moment from "moment";
-import Header from "../NavBar/NavBar";
-import Footer from "../Footer/Footer";
-import SearchNav from "../SearchNav/SearchNav";
+import EventDateSinglepage from "./EventDateSinglepage";
+import EventMailto from "./EventMailto";
+
 
 import "./EventPage.scss";
 //icons
@@ -12,7 +12,9 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaTicketAlt } from "react-icons/fa";
 import { FaInfo } from "react-icons/fa";
-//import eventImage from "../../images/mockup_event_0.jpeg";
+import { FaFacebookF } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
 
 export default function EventPage(event) {
   const [eventData, setEventData] = useState([]);
@@ -38,7 +40,8 @@ export default function EventPage(event) {
 
   const {
     address,
-    booking_required,
+    booking_required, 
+    free_event,
     description,
     name,
     email,
@@ -46,6 +49,7 @@ export default function EventPage(event) {
     phone,
     users_attending,
     website,
+    price,
     users_wishlisting,
     category,
     summary,
@@ -54,40 +58,25 @@ export default function EventPage(event) {
   } = eventData;
 
   const startDate = moment(start_date);
-  const endDate = moment(start_date);
+  const endDate = moment(end_date);
 
-  function EventDateSinglepage() {
-    const startMoment = moment(start_date);
-    const startDate = startMoment.format("D MMM");
-    const endMoment = moment(end_date);
-    
-    if (startMoment.isSame(endMoment, "day") && startMoment.isSame(endMoment, "month")) { 
-          return <p >{startDate}</p>;
-      } else if (startMoment.isSame(endMoment, "month")) {  
-          return ( <p >{startMoment.format("D ")} {endMoment.format(" - D MMM")}</p>);
-    } return (<p> {startMoment.format("D MMM")} {endMoment.format(" - D MMM")}</p>);
-  };
+  
 
   return (
-    <div className="search-nav">
-      <div className="top">
-        <Header />
-        <SearchNav />
-      </div>
       <main>
         <div className="event-container">
           <div className="event-image">
             <img src={image} alt="" />
             <p className="event-date">
-              <EventDateSinglepage />
+              <EventDateSinglepage event={event} />
             </p>
           </div>
           <div className="event-info">
             <div className="dates">
               <div className="item-info">
                 <h5>Dates and Time</h5>
-                <p>starts: {startDate.format('lll')}</p>
-                <p>Ends: {endDate.format('lll')}</p>
+                <p>From: {startDate.format('dddd, DD MMM YYYY, HH:mm')}</p>
+                <p>To: {endDate.format('lll')}</p>
               </div>
 
               <FaCalendarAlt />
@@ -98,16 +87,19 @@ export default function EventPage(event) {
                 <p>{address}</p>
                 <br />
                 <a href="https://googlemaps.com">Open in map</a>{" "}
-                {/* this is a web link */}
               </div>
               <FaMapMarkerAlt />
             </div>
             <div className="price">
               <div className="item-info">
                 <h5>Price and Bookings</h5>
-                <p>Price: 50 €</p>
+                
+                {free_event
+                  ? <p>FREE</p>
+                  : <p>Price: {price} €</p>
+                }
                 <br />
-                {!booking_required 
+                {booking_required 
                   ? <p>Booking Required</p>
                   : null
                 }
@@ -118,18 +110,27 @@ export default function EventPage(event) {
               <div className="item-info">
                 <h5>Contact details</h5>
                 <p>phone: {phone}</p>
-                <p>email: {email}</p>
                 <br />
-                <a href={website}>visit website</a>
-                {/* this is a web link */}
+                {/* <p className="event-email">email: <a target="_top" href={email}>{email}</a></p>  */}
+                <EventMailto email={email} subject={name} body="Hello!" className="event-email">
+                  Email
+                </EventMailto>
+                <br />
+                <p><a href={website} className="event-website">visit website</a></p>
+                <br />
+                <a href={website} className="social-media"><FaInstagramSquare /></a>
+                <a href={website} className="social-media"><FaFacebookF /></a>
+                <a href={website} className="social-media"><FaTwitter /></a>
               </div>
               <FaInfo />
             </div>
           </div>
           <div className="event-about">
-            <h2>{name}</h2>
+            <h2 className="event-title">{name}</h2>
+            <h5 className="event-category"><span>{category}</span>{users_attending}</h5>
             <div className="event-description">
-              <p>{description}</p>
+              <h5 className="event-summary">{summary}</h5>
+              <p> {description}</p>
             </div>
           </div>
           <div className="event-Map">
@@ -137,8 +138,5 @@ export default function EventPage(event) {
           </div>
         </div>
       </main>
-
-      <Footer />
-    </div>
   );
 }
