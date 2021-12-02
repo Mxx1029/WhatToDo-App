@@ -8,8 +8,7 @@ export default function EventDateCard({event}) {
   const startDate = startMoment.format("D MMM");
   const endMoment = moment(end_date);
   
-  if (
-    startMoment.isSame(endMoment, "day") && startMoment.isSame(endMoment, "month")) { 
+  if (startMoment.isSame(endMoment, "day") && startMoment.isSame(endMoment, "month")) { 
         return <p className="event-date">{startDate}</p>;
     } else if (startMoment.isSame(endMoment, "month")) {  
         return ( <p className="event-date">{startMoment.format("D ")} {endMoment.format(" - D MMM")}</p>);

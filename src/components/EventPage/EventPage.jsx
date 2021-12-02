@@ -1,92 +1,144 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "../NavBar/NavBar";
-import Footer from "../Footer/Footer";
-import SearchNav from "../SearchNav/SearchNav";
+import { useParams } from "react-router";
+import moment from "moment";
+import EventDateSinglepage from "./EventDateSinglepage";
+import EventMailto from "./EventMailto";
 
 
 import "./EventPage.scss";
 //icons
-import {FaCalendarAlt} from "react-icons/fa";
-import {FaMapMarkerAlt} from "react-icons/fa";
-import {FaTicketAlt} from "react-icons/fa";
-import {FaInfo} from "react-icons/fa";
-//import eventImage from "../../images/mockup_event_0.jpeg";
+import { FaCalendarAlt } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaTicketAlt } from "react-icons/fa";
+import { FaInfo } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
 
+export default function EventPage(event) {
+  const [eventData, setEventData] = useState([]);
 
-export default function EventPage({event}){
-    //const [eventData, setEventData] = useState([]);
-    const { name, image, category, summary, start_date, end_date } = event;
+  useEffect(() => {
+    fetchEvents();
+  }, []);
 
+  let { id } = useParams();
+  console.log(id);
 
-    return(
-        <div className="search-nav">
-            <div className="top">
-                <Header />
-                <SearchNav />
+  const fetchEvents = () => {
+    axios
+      .get("http://localhost:9012/events/" + id)
+      .then((res) => {
+        console.log(res);
+        setEventData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const {
+    address,
+    booking_required, 
+    free_event,
+    description,
+    name,
+    email,
+    image,
+    phone,
+    users_attending,
+    website,
+    price,
+    users_wishlisting,
+    category,
+    summary,
+    start_date,
+    end_date,
+  } = eventData;
+
+  const startDate = moment(start_date);
+  const endDate = moment(end_date);
+
+  
+
+  return (
+      <main>
+        <div className="event-container">
+          <div className="event-image">
+            <img src={image} alt="" />
+            <p className="event-date">
+              <EventDateSinglepage event={event} />
+            </p>
+          </div>
+          <div className="event-info">
+            <div className="dates">
+              <div className="item-info">
+                <h5>Dates and Time</h5>
+                <p>From: {startDate.format('dddd, DD MMM YYYY, HH:mm')}</p>
+                <p>To: {endDate.format('dddd, DD MMM YYYY, HH:mm')}</p>
+              </div>
+
+              <FaCalendarAlt />
             </div>
-            <main>
-             <div className="event-container">
-                <div className="event-image">
-                    <img src={event.image} alt="" />
-                    <p className="event-date">13 NOV</p>
-                </div>
-                <div className="event-info">
-                    <div className="dates">
-                        <div className="item-info">
-                             <h5>Dates and Time</h5>  
-                             <p>Sat 20 Nov  |  11pm</p>
-                        </div>
-                     
-                       <FaCalendarAlt />
-                    </div>
-                    <div className="location">
-                    <div className="item-info">
-                       <h5> Location</h5> 
-                       <p>Prinzenstraße 85F,  10969 Berlin</p>
-                       <br />
-                       <a href="https://googlemaps.com">Open in map</a> {/* this is a web link */}
-                    
-                       </div>
-                       <FaMapMarkerAlt /> 
-                    </div>
-                    <div className="price">
-                     <div className="item-info">
-                       <h5>Price and Bookings</h5>
-                       <p>50 €</p>
-                     </div>
-                      <FaTicketAlt />
-                    </div>
-                    <div className="contact-i">
-                     <div className="item-info">
-                       <h5>Contact details</h5>
-                       <p>info@horsemeatdisco.com</p>
-                       <br />
-                       <a href="https://eventpage.com">visit website</a>{/* this is a web link */}
-                     </div>
-                     <FaInfo />
-                    </div>
-                </div>
-                <div className="event-about">
-                    <h2>Event Title</h2>
-                    <div className="event-description"> 
-                        <p>The nation’s foremost celebration of everything drag, kitsch and pop-culture comes to Melbourne.
-                        Catch up with local and international drag artiste royalty including Drag Expo Ambassador Karen From Finance. Visitors can meet the stars of RuPaul’s Drag Race, plus local stars. Some of the stars include Alaska Thunder*uck, Art Simone, Bebe Zahara Benet, Berry Juicy, Bible Girl, Chelsea Bun, Cherylyn Barnes, Desmond Is Amazing, Eve Elle, Hannah Conda, Jasmine Masters, Kane Enable, Katya, Luci Furr, Manila Luzon, Pangina Heels, Phi Phi O'Hara, Sharon Needles, Stacy Queen, Tatianna, Trinity The Tuck, Trixie Mattel and Wundes.
-                        
-                        Enjoy a plethora of panels, tutorials, chill-out spaces, fabulous shopping stores, runways with Q&A sessions, meet and greets, official merchandise, a drag market and more.
-                        
-                        Learn how drag has evolved over the years, how Australia has given drag our own special flavour, and how drag artistes have a message everyone can learn from.
-                        </p> 
-                    </div>
-                </div>
-                <div className="event-Map">
-                <p>This is the map container and here goes a map view</p> 
-                </div>
+            <div className="location">
+              <div className="item-info">
+                <h5> Location</h5>
+                <p>{address}</p>
+                <br />
+                <a href="https://googlemaps.com/">Open in map</a>
+              </div>
+              <FaMapMarkerAlt />
+            </div>
+            <div className="price">
+              <div className="item-info">
+                <h5>Price and Bookings</h5>
                 
-             </div>
-            </main>
-           
-            <Footer />
+                {free_event
+                  ? <p>FREE</p>
+                  : <p>Price: {price} €</p>
+                }
+                <br />
+                {booking_required 
+                  ? <p>Booking Required</p>
+                  : null
+                }
+              </div>
+              <FaTicketAlt />
+            </div>
+            <div className="contact-i">
+              <div className="item-info">
+                <h5>Contact details</h5>
+                  {phone ? <p>phone: {phone}</p> : null}   
+                  <br />
+                  {email 
+                    ? <EventMailto email={email} subject={name} body="Hello!" className="event-email">
+                          Email
+                      </EventMailto>
+                    : null}
+                
+                  <br />
+                  {website ? <p><a href={website} className="event-website">visit website</a></p> : null}
+                  <br />
+                  <a href={website} className="social-media"><FaInstagramSquare /></a>
+                  <a href={website} className="social-media"><FaFacebookF /></a>
+                  <a href={website} className="social-media"><FaTwitter /></a>
+              </div>
+              <FaInfo />
+            </div>
+          </div>
+          <div className="event-about">
+            <h2 className="event-title">{name}</h2>
+             <h5 className="event-category"><span>{category}</span>{users_attending}</h5>
+              <div className="event-description">
+                 <h5 className="event-summary">{summary}</h5>
+                  <p>{description}</p>
+              </div>
+          </div>
+          <div className="event-Map">
+            <p>This is the map container and here goes a map view</p>
+          </div>
         </div>
-    )
+      </main>
+  );
 }

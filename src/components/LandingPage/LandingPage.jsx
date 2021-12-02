@@ -44,9 +44,10 @@ export default function LandingPage(){
                 <h2>WHAT TO DO ...TODAY?</h2>
             </div>
             <main>
-              {events?.map(event => 
+              {events?.map((event, index) => 
                  <Card key={event._id} 
-                       event={event} />)}         
+                       event={event}
+                       index={index} />)}         
             </main>
            
             <Footer />
