@@ -1,6 +1,6 @@
 import LoginText from "./LoginText"
 import LoginForm from "./LoginForm"
-import "./MainLogin.css"
+import "./MainLogin.scss"
 
 
 export default function LoginPage(){

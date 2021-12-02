@@ -1,6 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import "./LoginForm.css"
+import "./LoginForm.scss"
 
 export default function LoginForm() {
   const { register, handleSubmit, formState: { errors } } = useForm();
@@ -8,7 +8,7 @@ export default function LoginForm() {
   console.log(errors);
   
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="email">EMAIL</label>
       <input type="text" placeholder="" {...register("Email", {required: true, pattern: /^\S+@\S+$/i})} />
       <label htmlFor="password">PASSWORD</label>
