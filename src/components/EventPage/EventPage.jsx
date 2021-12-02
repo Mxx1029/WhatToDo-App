@@ -76,7 +76,7 @@ export default function EventPage(event) {
               <div className="item-info">
                 <h5>Dates and Time</h5>
                 <p>From: {startDate.format('dddd, DD MMM YYYY, HH:mm')}</p>
-                <p>To: {endDate.format('lll')}</p>
+                <p>To: {endDate.format('dddd, DD MMM YYYY, HH:mm')}</p>
               </div>
 
               <FaCalendarAlt />
@@ -86,7 +86,7 @@ export default function EventPage(event) {
                 <h5> Location</h5>
                 <p>{address}</p>
                 <br />
-                <a href="https://googlemaps.com">Open in map</a>{" "}
+                <a href="https://googlemaps.com/">Open in map</a>
               </div>
               <FaMapMarkerAlt />
             </div>
@@ -109,29 +109,31 @@ export default function EventPage(event) {
             <div className="contact-i">
               <div className="item-info">
                 <h5>Contact details</h5>
-                <p>phone: {phone}</p>
-                <br />
-                {/* <p className="event-email">email: <a target="_top" href={email}>{email}</a></p>  */}
-                <EventMailto email={email} subject={name} body="Hello!" className="event-email">
-                  Email
-                </EventMailto>
-                <br />
-                <p><a href={website} className="event-website">visit website</a></p>
-                <br />
-                <a href={website} className="social-media"><FaInstagramSquare /></a>
-                <a href={website} className="social-media"><FaFacebookF /></a>
-                <a href={website} className="social-media"><FaTwitter /></a>
+                  {phone ? <p>phone: {phone}</p> : null}   
+                  <br />
+                  {email 
+                    ? <EventMailto email={email} subject={name} body="Hello!" className="event-email">
+                          Email
+                      </EventMailto>
+                    : null}
+                
+                  <br />
+                  {website ? <p><a href={website} className="event-website">visit website</a></p> : null}
+                  <br />
+                  <a href={website} className="social-media"><FaInstagramSquare /></a>
+                  <a href={website} className="social-media"><FaFacebookF /></a>
+                  <a href={website} className="social-media"><FaTwitter /></a>
               </div>
               <FaInfo />
             </div>
           </div>
           <div className="event-about">
             <h2 className="event-title">{name}</h2>
-            <h5 className="event-category"><span>{category}</span>{users_attending}</h5>
-            <div className="event-description">
-              <h5 className="event-summary">{summary}</h5>
-              <p> {description}</p>
-            </div>
+             <h5 className="event-category"><span>{category}</span>{users_attending}</h5>
+              <div className="event-description">
+                 <h5 className="event-summary">{summary}</h5>
+                  <p>{description}</p>
+              </div>
           </div>
           <div className="event-Map">
             <p>This is the map container and here goes a map view</p>
