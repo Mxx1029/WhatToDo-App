@@ -1,7 +1,7 @@
 import React from 'react';
 import  { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './components/LandingPage/LandingPage';
-import EventPage from "./components/EventPage/EventPage";
+import Event from "./components/EventPage/Event";
 import PageNotFound from "./components/PageNotFound/MainPageNotFound";
 import ListingPage from "./components/ListingPage/ListingPage.jsx";
 import RegistrationPage from "./components/RegistrationPage/RegistrationPage";
@@ -16,7 +16,7 @@ function App() {
            <Router>
              <Routes>
                <Route path="/" caseSensitive={false} element={<LandingPage/>} />
-               <Route path="/event-page" caseSensitive={false} element={<EventPage/>} />
+               <Route path="/event/:id" caseSensitive={false} element={<Event />} />
                <Route path="*" caseSensitive={false} element={<PageNotFound/>} />
                <Route path="/register" caseSensitive={false} element={<RegistrationPage/>} />
                <Route path="/login" caseSensitive={false} element={<LoginPage/>} />
