@@ -1,4 +1,4 @@
-import "./RegistrationText.css"
+import "./RegistrationText.scss"
 import { FaArrowRight } from "react-icons/fa";
 
 export default function RegistrationText(){

@@ -1,7 +1,7 @@
 import "./Form.scss"
 import React, { useState} from 'react';
 import axios from "axios";
-import { useForm } from 'react-hook-form';
+// import { useForm } from 'react-hook-form';
 import { FaCloudUploadAlt } from "react-icons/fa";
 
 
@@ -27,24 +27,30 @@ export default function Form(){
         e.preventDefault();
 
         let fd = new FormData();
-        fd.append("name", listing.email);
+        fd.append("name", listing.name);
         fd.append("address", listing.address);
-        fd.append("categories", listing.categories)
+        fd.append("category", listing.category)
         fd.append("summary", listing.summary);
         fd.append("description", listing.description);
+        fd.append("start_date", "2022-02-23 12:00");
+        fd.append("end_date", "2022-02-23 16:00");
+        fd.append("start_time", "2022-02-23 12:00");
+        fd.append("end_time", "2022-02-23 16:00");
+        fd.append("free_event", listing.free_event);
         fd.append("price", listing.price);
-        fd.append("bookingLink", listing.bookingLink);
+        fd.append("booking_required", listing.booking_required);
+        fd.append("booking_site", listing.booking_site)
         fd.append("website", listing.website);
         fd.append("email", listing.email);
         fd.append("phone", listing.phone);
         fd.append("instagram", listing.instagram);
         fd.append("facebook", listing.facebook);
-        fd.append("file", image.raw, image.preview);
+        //fd.append("image", image.raw, image.preview);
 
 
 
         axios({
-            url: "http://localhost:5000/create-listing",
+            url: "http://localhost:3001/users/:userId/events",
             method: "POST",
             data: fd,
             headers: {
@@ -57,19 +63,18 @@ export default function Form(){
     }
 
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
-    console.log(errors);
+    // const { register, handleSubmit, formState: { errors } } = useForm();
+    // const onSubmit = data => console.log(data);
+    // console.log(errors);
 
     return(
         <div className="form">
             <h1>CREATE LISTING</h1>
-            <form enctype="multipart/form-data" onSubmit={handleSubmit(onSubmit)}>
+            <form enctype="multipart/form-data" onSubmit={submitHandler}>
                 <div>
                     <label htmlFor="name">Listing Name</label>
                     <input
                         type="text" 
-                        {...register("Listing Name", {required: true, max: 50, min: 1})} 
                         id="name" 
                         name="name"
                         onChange={changeHandler}
@@ -79,7 +84,6 @@ export default function Form(){
                     <label htmlFor="address">Address</label>
                     <input 
                         type="text" 
-                        {...register("Address", {required: true, max: 100, min: 3})} 
                         id="address" 
                         name="address"
                         onChange={changeHandler}
@@ -91,10 +95,9 @@ export default function Form(){
 
                     <div className="container">
                         <input 
-                            {...register("Categories", { required: true })} 
                             className="hide-box" 
                             id="1" type="radio" 
-                            name="categories" 
+                            name="category" 
                             value="Free" 
                             onChange={changeHandler}
                         />
@@ -105,10 +108,9 @@ export default function Form(){
                         </label>
 
                         <input 
-                            {...register("Categories", { required: true })} 
                             className="hide-box" 
                             id="2" type="radio" 
-                            name="categories" 
+                            name="category" 
                             value=" Workshop" 
                             onChange={changeHandler}
                         />
@@ -119,11 +121,10 @@ export default function Form(){
                         </label>
 
                         <input 
-                            {...register("Categories", { required: true })} 
                             className="hide-box" 
                             id="3" 
                             type="radio" 
-                            name="categories" 
+                            name="category" 
                             value=" Family" 
                             onChange={changeHandler}
                         />
@@ -133,11 +134,10 @@ export default function Form(){
                             </div>
                         </label>
                         <input 
-                            {...register("Categories", { required: true })} 
                             className="hide-box" 
                             id="4" 
                             type="radio" 
-                            name="categories" 
+                            name="category" 
                             value=" Market"
                             onChange={changeHandler}
                         />
@@ -148,10 +148,9 @@ export default function Form(){
                         </label>
 
                         <input 
-                            {...register("Categories", { required: true })} 
                             className="hide-box" 
                             id="5" type="radio" 
-                            name="categories" 
+                            name="category" 
                             value=" Food and Drinks"
                             onChange={changeHandler}
                         />
@@ -162,10 +161,9 @@ export default function Form(){
                         </label>
 
                         <input 
-                            {...register("Categories", { required: true })} 
                             className="hide-box"  
                             id="6" type="radio" 
-                            name="categories" 
+                            name="category" 
                             value=" Reading"
                             onChange={changeHandler}
                         />
@@ -176,10 +174,9 @@ export default function Form(){
                         </label>
 
                         <input 
-                            {...register("Categories", { required: true })} 
                             className="hide-box" 
                             id="7" type="radio" 
-                            name="categories" 
+                            name="category" 
                             value="Exhibition" 
                             onChange={changeHandler}
                         />
@@ -190,10 +187,9 @@ export default function Form(){
                         </label>
 
                         <input 
-                            {...register("Categories", { required: true })} 
                             className="hide-box" 
                             id="8" type="radio" 
-                            name="categories" 
+                            name="category" 
                             value=" Performing Arts"
                             onChange={changeHandler}
                         />
@@ -204,10 +200,9 @@ export default function Form(){
                         </label>
 
                         <input 
-                            {...register("Categories", { required: true })} 
                             className="hide-box" 
                             id="9" type="radio" 
-                            name="categories" 
+                            name="category" 
                             value="Music" 
                             onChange={changeHandler}
                             />
@@ -218,10 +213,9 @@ export default function Form(){
                         </label>
 
                         <input 
-                            {...register("Categories", { required: true })} 
                             className="hide-box" 
                             id="10" type="radio" 
-                            name="categories" 
+                            name="category" 
                             value="Party"
                             onChange={changeHandler}
                         />
@@ -232,11 +226,10 @@ export default function Form(){
                         </label>
 
                         <input 
-                            {...register("Categories", { required: true })} 
                             className="hide-box" 
                             id="11" 
                             type="radio" 
-                            name="categories" 
+                            name="category" 
                             value="Opening"
                             onChange={changeHandler}
                         />
@@ -247,10 +240,9 @@ export default function Form(){
                         </label>
 
                         <input 
-                            {...register("Categories", { required: true })} 
                             className="hide-box" 
                             id="12" type="radio" 
-                            name="categories" 
+                            name="category" 
                             value="Film"
                             onChange={changeHandler}
                             />
@@ -269,7 +261,6 @@ export default function Form(){
                     <p>This brief overview of your listing will appear in search results.</p>
                     <textarea 
                         className="summary" 
-                        {...register("Summary", {required: true, max: 100, min: 3})} 
                         id="summary"
                         name="summary"
                         onChange={changeHandler}
@@ -279,7 +270,6 @@ export default function Form(){
                     <label htmlFor="description">Description</label>
                     <textarea 
                         className="description" 
-                        {...register("Description", {required: true, max: 1000, min: 3})} 
                         id="description" 
                         name="description"
                         onChange={changeHandler}
@@ -291,8 +281,7 @@ export default function Form(){
                     <label htmlFor="start">When does the event start?</label>
                     <input 
                         type="date" 
-                        {...register("Start date", {required: true})} 
-                        name="start-date" 
+                        name="start_date" 
                         id="start"
                         onChange={changeHandler}
                     />
@@ -301,8 +290,7 @@ export default function Form(){
                     <label htmlFor="end">When does the event end?</label>
                     <input 
                         type="date" 
-                        {...register("End date", {required: true})} 
-                        name="end-date" 
+                        name="end_date" 
                         id="end"
                         onChange={changeHandler}
                     />
@@ -314,9 +302,8 @@ export default function Form(){
                     <label htmlFor="time-start">What time does the event start?</label>
                     <input 
                         type="time" 
-                        {...register("time", {required: true})} 
                         name="time" 
-                        id="time-start"
+                        id="start_time"
                         onChange={changeHandler}
                     />
                 </div>
@@ -324,9 +311,8 @@ export default function Form(){
                     <label htmlFor="time-end">What time does the event end?</label>
                     <input 
                         type="time" 
-                        {...register("time", {required: true})} 
                         name="time" 
-                        id="time-end"
+                        id="end_time"
                         onChange={changeHandler}
                     />
                 </div>
@@ -336,12 +322,11 @@ export default function Form(){
                     <label htmlFor="free">Is this a free event or tour ?</label>
                     <div className="container">
                         <input 
-                            {...register} 
                             className="hide-box" 
                             id="yes-free" 
                             type="radio" 
-                            value="yes " 
-                            name="free" 
+                            value="yes" 
+                            name="free_event" 
                             onChange={changeHandler}
                         />
                         <label htmlFor="yes-free" className="free-radio">
@@ -351,12 +336,11 @@ export default function Form(){
                         </label>
 
                         <input 
-                            {...register} 
                             className="hide-box" 
                             id="no-free" 
                             type="radio" 
-                            value=" no" 
-                            name="free" 
+                            value="no" 
+                            name="free_event" 
                             onChange={changeHandler}
                         />
                         <label htmlFor="no-free" className="free-radio">
@@ -371,7 +355,6 @@ export default function Form(){
                     <label htmlFor="price">Price</label>
                     <input 
                         type="number" 
-                        {...register("Price", {})} 
                         id="price" 
                         name="price"
                         onChange={changeHandler}
@@ -382,12 +365,11 @@ export default function Form(){
                     <label htmlFor="bookings">Are bookings required?</label>
                     <div className="container">
                         <input 
-                            {...register} 
                             className="hide-box" 
                             id="yes-booking" 
                             type="radio" 
-                            value="yes " 
-                            name="booking"
+                            value="yes" 
+                            name="booking_required"
                             onChange={changeHandler}
                         />
                         <label htmlFor="yes-booking" className="booking-radio">
@@ -397,12 +379,11 @@ export default function Form(){
                         </label>
 
                         <input 
-                            {...register} 
                             className="hide-box" 
                             id="no-booking" 
                             type="radio" 
-                            value=" no" 
-                            name="booking"
+                            value="no" 
+                            name="booking_required"
                             onChange={changeHandler}
                         />
                         <label htmlFor="no-booking" className="booking-radio">
@@ -417,9 +398,8 @@ export default function Form(){
                     <label htmlFor="bookingLink">Booking link</label>
                     <input 
                         type="text" 
-                        {...register("Booking link", {})} 
                         id="bookingLink" 
-                        name="bookingLink"
+                        name="booking_site"
                         onChange={changeHandler}
                     />
                 </div>
@@ -430,7 +410,6 @@ export default function Form(){
                     <label htmlFor="website">Website</label>
                     <input 
                         type="text" 
-                        {...register("Website", {min: 5})} 
                         id="website" 
                         name="website"
                         onChange={changeHandler}
@@ -440,7 +419,6 @@ export default function Form(){
                     <label htmlFor="email">Email</label>
                     <input 
                         type="text" 
-                        {...register("Email", {required: true, pattern: /^\S+@\S+$/i})} 
                         id="email" 
                         name="email"
                         onChange={changeHandler}
@@ -450,7 +428,6 @@ export default function Form(){
                     <label htmlFor="phone">Phone</label>
                     <input 
                         type="tel" 
-                        {...register("Phone", {required: true, minLength: 6, maxLength: 25})} 
                         id="phone" 
                         name="phone"
                         onChange={changeHandler}
@@ -460,7 +437,6 @@ export default function Form(){
                     <label htmlFor="instagram">Instagram</label>
                     <input 
                         type="text" 
-                        {...register("Instagram", {min: 3})} 
                         id="instagram" 
                         name="instagram"
                         onChange={changeHandler}
@@ -470,7 +446,6 @@ export default function Form(){
                     <label htmlFor="facebook">Facebook</label>
                     <input 
                         type="text" 
-                        {...register("Facebook", {min: 3})} 
                         id="facebook" 
                         name="facebook"
                         onChange={changeHandler}
@@ -491,7 +466,7 @@ export default function Form(){
                     <input 
                         id='input-file' 
                         type='file' 
-                        name="file"
+                        name="image"
                         // name="uploaded_image"
                         onChange={fileChangeHandler}
                     />
