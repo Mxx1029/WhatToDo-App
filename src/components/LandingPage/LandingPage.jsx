@@ -42,6 +42,9 @@ export default function LandingPage(){
             </div>
             <div className="search-results">
                 <h2>WHAT TO DO ...TODAY?</h2>
+                <button className="display-single">SINGLE -</button>
+                
+                <button className="display-grid">GRID</button>
             </div>
             <main>
               {events?.map((event, index) => 
