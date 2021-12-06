@@ -17,25 +17,31 @@
         font-size: 1em;
         padding-left: 0;
         padding-top: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
     }
-    .display-single,
-    .display-grid {
+    button.display-single,
+    button.display-grid {
+        position: absolute;
+        top: 140px;
         border: none;
         background-color: transparent; 
-        :visited {
+        :active {
             font-weight: bold;
+            color: #A79FFB;
         }
     }
-    .display-single {
-        padding-left: 180px;
-    }
+     button.display-single {
+        right: 64px;
+     }
+     button.display-grid {
+        right: 24px;
+     }
 }
 
 main {
-    width: 70vw; 
-    // min-height: calc(100vh - 70px);
-    margin: 0 auto;
+    //width: 77vw; //single
+    width: 91vw; //grid
+    margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;   

@@ -3,13 +3,13 @@
   left: 0%;
   right: 0%;
   top: 0%;
-  bottom: 40.34%;
-  height: 250px;
-  width: 240px;
-  left: 0px;
-  top: 0px;
+  bottom: 40%;
+  //height: 250px;//single
+  height: 280px;//grid
+  // width: 250px;//single
+  width: 150px; //grid
   border-radius: 12px;
-  margin: 5px 20px 20px 20px;
+  margin: 5px 10px;
   display: block;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;//we can remove this if we prefer
   
@@ -24,7 +24,8 @@
 
   .event-img {
     height: 129px;
-    width: 239px;
+    //width: 249px; //single
+    width: 149px; //grid
     object-fit: cover;
     border-radius: 5px;
   }
@@ -32,8 +33,10 @@
   .event-date {
     position: absolute;
     top: 110px;
-    left: 50px;
-    right: 50px;
+    left: 50px; //single
+    right: 50px;// single
+    left: 20px; //grid
+    right: 20px;// grid
     padding: 5px 15px;
     margin: 0;
     background-color: white;
@@ -44,19 +47,23 @@
   }
 
   .card-text {
-    padding: 8px; //or 5px 0; if we decide to remove box-shadow
+    //padding: 8px; //or 5px 0; if we decide to remove box-shadow
+    padding: 0; //grid
     .card-title {
-      height: 30px;
+      //height: 30px;//single
+      height: 450px; //grid
     }
     h5 {
       margin: 0;
       padding-top: 10px;
+      font-size: 11px; //grid
     }
     .card-summary {
       height: 30px;
     }
     p {
-    font-size: 12px;
+    //font-size: 12px;//single
+    font-size: 11px;//grid
     margin: 0;
     }
   }
@@ -68,8 +75,8 @@
     flex-direction: row;
     justify-content:space-between;
     align-items:center;
-    padding: 8px;
-    
+    padding: 8px;//singĺe
+    //padding: 0; //grid
     .card-category {
       width: 120px;
     }
