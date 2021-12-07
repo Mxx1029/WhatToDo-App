@@ -2,54 +2,65 @@
     position: relative;
     bottom: 0;
     width: 100%;
-    height: 150px; 
+    height: fit-content; 
+    margin-top: 20px;
     background-color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 
     .container {
         // margin: 80px 400px 80px 400px;
-        width: 100vw;
-        margin: 0 auto;
-        line-height: 2em;
-        display: flex;
+        width: 100%;
+        line-height: 1.5em;
+        display: block;
+        margin-left: 10px;  
+        .line{
+                color:white;
+                width: 95%;
+                margin-top: 0;
+                margin-bottom: 0;
 
-        .links-copyright {
-            width: 40%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-
-            p {
-                color: white;
-                margin: 0;
-                text-decoration: underline;
             }
 
-        }
         .contact{
-            width: 40%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             
             .contact-whattodo {
                 font-size: 1.3em;
-                text-decoration: underline #A79FFB 2px;
+                margin-left: 10px;
+                margin-bottom: 10px;
             }
+          
             p {
                 color: white;
-                margin: 0;
+                margin-left: 10px;
             }
         }
 
+        .links-copyright {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-bottom: 15px;
+
+            p {
+                color: white;
+                margin-left: 10px;
+                text-decoration: none;
+
+            }
+
+        }
+        
         .logo-footer {
-            color: #A79FFB;
-            justify-self: start;
-            cursor: pointer;
-            padding-top: 15px;
-            height: 30px;
+            display: none;
+            // color: #A79FFB;
+            // justify-self: start;
+            // cursor: pointer;
+            // padding-top: 15px;
+            // height: 30px;
         
         }
     }

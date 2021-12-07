@@ -48,10 +48,10 @@
 
   .card-text {
     //padding: 8px; //or 5px 0; if we decide to remove box-shadow
-    padding: 0; //grid
+    padding: 5px; //grid
     .card-title {
       //height: 30px;//single
-      height: 450px; //grid
+      height: 40px; //grid
     }
     h5 {
       margin: 0;
@@ -59,29 +59,34 @@
       font-size: 11px; //grid
     }
     .card-summary {
-      height: 30px;
+      //height: 30px;// single
+      height: 50px;
     }
     p {
     //font-size: 12px;//single
     font-size: 11px;//grid
     margin: 0;
+    height: 30px;
     }
   }
 
   .card-footer {
-    position: relative;
-    bottom: 5px;
+    position: absolute;
+    bottom: 10px;
+    width: 90%;
     display: flex;
     flex-direction: row;
-    justify-content:space-between;
+    justify-content:space-around;
     align-items:center;
-    padding: 8px;//singĺe
-    //padding: 0; //grid
+    //padding: 8px;//singĺe
+    padding-right: 5px; //grid
     .card-category {
       width: 120px;
+      height: 15px;
     }
     p {
-      font-size: 12px;
+      //font-size: 12px;//single
+      font-size: 10px;//grid
       width: min-content;
       text-transform: uppercase;
     }
@@ -89,6 +94,7 @@
       border-radius: 50%;
       border: none;
       padding: 8px 5px;
+      margin-left: 10px;//grid
       background-color: #c9c5fc;
       font-size: 10px;
     }
