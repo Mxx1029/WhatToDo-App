@@ -3,6 +3,8 @@ import axios from 'axios';
 // import { useForm } from 'react-hook-form';
 import "./LoginForm.scss"
 import LandingPage from '../LandingPage/LandingPage';
+// import {useHistory} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export default function LoginForm() {
   const [user, setUser] = useState({
@@ -19,6 +21,8 @@ export default function LoginForm() {
     })
   }
 
+  const navigate = useNavigate()
+
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log("user is logged in")
@@ -26,19 +30,26 @@ export default function LoginForm() {
 
     axios.post("http://localhost:3001/users/login", user, headers)
         .then(response => {
-          if (response.data.error) {
-           setLoginStatus(response.data.status);
-          } else {
-            // setLoginStatus(response.data.name);
-            // props.setUser(response.data)
-          }   
+          console.log(response.data)
+          if(response.status == 200){
+            localStorage.setItem("isLogin", true)
+            navigate("/")
+            return console.log("test")
+          }
+          console.log("bad request")
+          // if (response.data.message) {
+          //  setLoginStatus(response.data.status);
+          // } else {
+          //   // setLoginStatus(response.data.name);
+          //   // props.setUser(response.data)
+          // }   
         })
     }
 
-    if(loginStatus && loginStatus !== "error") {
-        return ( 
-          < LandingPage />)
-    }         
+    // if(loginStatus && loginStatus !== "error") {
+    //     return ( 
+    //       < LandingPage />)
+    // }         
 
 
 

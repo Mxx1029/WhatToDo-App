@@ -10,6 +10,8 @@ export default function RegistrationForm() {
     password:""
   })
 
+  const [myError, setMyError] = useState("")
+
   const handleChange = (e) => {
     const {name, value} = e.target
     setUser({
@@ -23,12 +25,12 @@ export default function RegistrationForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("User registered")
     
     const {name, email, password} = user
     if(name && email && password){
        axios.post("http://localhost:3001/users/", user)
-       .then(response => console.log(response))
+       .then(response => setMyError(response.data.error))
+      
     } else {
       alert("invalid input")
     }
@@ -53,6 +55,8 @@ export default function RegistrationForm() {
         // {...register("Email", {required: true, pattern: /^\S+@\S+$/i})} 
       />
 
+      <span>{myError ? myError : null }</span>
+
       <label htmlFor="password">PASSWORD</label>
       <input 
         type="password" 
@@ -63,6 +67,8 @@ export default function RegistrationForm() {
       />
 
       <p>Forgot your password ?</p>
+
+      {}
 
       <input type="submit" value="Register"/>
     </form>
