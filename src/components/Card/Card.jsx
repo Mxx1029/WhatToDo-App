@@ -16,19 +16,19 @@ export default function Card({event}) {
   
    
   return (
-    <div className="card-container">
+    <div className="card-container column">
       <div className="image-container">
         {/* Event image */}
-        <img src={image ? image : defaultImage} alt="" className="event-img" />
+        <img src={image ? image : defaultImage} alt="" className="event-img row column" />
 
         <EventDateCard event={event} /> 
 
       </div>
-      <div className="card-text">
-        <h5 className="card-title">{name}</h5>
-        <p className="card-summary">{summary}</p>
-        <div className="card-footer">
-          <p className="card-category"><span>{category}</span></p>
+      <div className="card-text column">
+        <h5 className="card-title column">{name}</h5>
+        <p className="card-summary column">{summary}</p>
+        <div className="card-footer column">
+          <p className="card-category column"><span>{category}</span></p>
           <FavoriteButton />
           <Link to={"/event/" + event._id} >
            <button>GO</button>
