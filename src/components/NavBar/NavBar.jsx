@@ -1,7 +1,7 @@
-import "./NavBar.scss"
-import logo from "../../images/what toDo.png"
-import heart from "../../images/heart.png"
-import { useNavigate } from "react-router-dom"
+import "./NavBar.scss";
+import logo from "../../images/what toDo.png";
+import { useNavigate } from "react-router-dom";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
 
 export default function NavBar(){
     const isLogin = localStorage.getItem("isLogin")
@@ -9,9 +9,9 @@ export default function NavBar(){
 
     const logoutHandler = () => {
         localStorage.removeItem("isLogin")
-        navigate("/")
-        
+        navigate("/")   
     }
+    
     return(
         <div className="navbar">
             <div className="logo">
@@ -20,8 +20,7 @@ export default function NavBar(){
             <div className="nav">
                 <button className="btn-navbar">LIST AN EVENT</button>
                 {isLogin ? <button className="btn-navbar" onClick={logoutHandler}>LOG OUT!</button> : <button className="btn-navbar">LOG IN!</button>}
-                
-                <div className="heart"><img src={heart} alt="heart" /></div>
+                <FaRegHeart className="heart" /> 
             </div>
         </div>
     )

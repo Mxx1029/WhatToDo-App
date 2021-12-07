@@ -1,27 +1,38 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import eventImg from "../../images/mockup_event_1.jpeg";
+import EventDateCard from "./EventDateCard";
+import {eventDefaultImages} from "../../images/defaultImagesDB/defaultImagesDB";
 import FavoriteButton from "./ButtonFavorite";
 
 import "./Card.scss";
 
-export default function Card() {
+export default function Card({event}) {
+  const { name, image, category, summary } = event;
+
+
+  //print a random default image of the array db
+  let defaultImage = eventDefaultImages[Math.floor(Math.random()*eventDefaultImages.length)];
+
+  
+   
   return (
     <div className="card-container">
       <div className="image-container">
-        <img src={eventImg} alt="" className="event-img" />
-        <p className="event-date">13 NOV</p>
+        {/* Event image */}
+        <img src={image ? image : defaultImage} alt="" className="event-img" />
+
+        <EventDateCard event={event} /> 
+
       </div>
       <div className="card-text">
-        <h5>mykki blanco at volksbühne</h5>
-        <p>
-          Instead of a DJ, the live show will, for the first time, feature a
-          live band with background singers.
-        </p>
+        <h5 className="card-title">{name}</h5>
+        <p className="card-summary">{summary}</p>
         <div className="card-footer">
-          <p>THEATER</p>
+          <p className="card-category"><span>{category}</span></p>
           <FavoriteButton />
-          <button as={Link} to="/event-page">GO</button>
+          <Link to={"/event/" + event._id} >
+           <button>GO</button>
+          </Link>
         </div>
       </div>
     </div>
