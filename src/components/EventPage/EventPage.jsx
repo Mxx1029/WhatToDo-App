@@ -28,7 +28,7 @@ export default function EventPage(event) {
 
   const fetchEvents = () => {
     axios
-      .get("http://localhost:9012/events/" + id)
+      .get("/events/" + id)
       .then((res) => {
         console.log(res);
         setEventData(res.data);

@@ -50,13 +50,13 @@ export default function Form(){
 
 
         axios({
-            url: "http://localhost:3001/users/:userId/events",
+            url: "/users/:userId/events",
             method: "POST",
             data: fd,
             headers: {
                 "Content-type":"multipart/formdata"
             }
-        }).then(res => console.log(res))
+        }).then(res => console.log(res, "submitted"))
           .catch(err => console.log(err))
 
 

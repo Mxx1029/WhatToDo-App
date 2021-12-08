@@ -18,7 +18,7 @@ export default function LandingPage(){
 
     const fetchEvents = () => {
         axios
-          .get('http://localhost:9012/events/today')
+          .get('/events/today')
           .then((res) => {
             console.log(res);
             setEvents(res.data);

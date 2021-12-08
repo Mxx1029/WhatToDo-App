@@ -1,7 +1,7 @@
-import NavBarBroken from "./NavBarBroken.jsx"
-import MainPageNotFound from "./MainPageNotFound"
-import Footer from "../Footer/Footer"
-import "./PageNotFound.scss"
+import NavBarBroken from "./NavBarBroken.jsx";
+import MainPageNotFound from "./MainPageNotFound.jsx";
+import Footer from "../Footer/Footer.jsx";
+import "./PageNotFound.scss";
 
 
 export default function PageNotfound(){
