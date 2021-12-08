@@ -1,4 +1,4 @@
-const EventMailto = ({ email, subject = '', body = '', children }) => {
+const Mailto = ({ email, subject = '', body = '', children }) => {
     let params = subject || body ? '?' : '';
     if (subject) params += `subject=${encodeURIComponent(subject)}`;
     if (body) params += `${subject ? '&' : ''}body=${encodeURIComponent(body)}`;
@@ -6,4 +6,4 @@ const EventMailto = ({ email, subject = '', body = '', children }) => {
     return <a href={`mailto:${email}${params}`}>{children}</a>;
   };
 
-  export default EventMailto;
+  export default Mailto;

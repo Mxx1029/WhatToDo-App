@@ -1,8 +1,16 @@
-import "./NavBar.scss"
-import logo from "../../images/what toDo.png"
+import React, {useState} from "react";
+import "./NavBar.scss";
+import logo from "../../images/what toDo.png";
+import { FaSearch } from "react-icons/fa";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 
 export default function NavBar(){
+    const {hamburguerOpen, setHamburgerOpen} = useState(false);
+
+    const toogleHamburger = () => {
+        setHamburgerOpen(!hamburguerOpen);
+    }
 
     return(
         <div className="navbar">
@@ -12,7 +20,9 @@ export default function NavBar(){
             <div className="nav">
                 <button className="btn-navbar">LIST AN EVENT</button>
                 <button className="btn-navbar">LOG IN!</button>
+                <FaSearch className="mobile-search-icon" /> 
                 <FaRegHeart className="heart" /> 
+                <FaBars className="mobile-menu-bars" onClick={toogleHamburger} />
             </div>
         </div>
     )
