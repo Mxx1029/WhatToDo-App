@@ -1,3 +1,4 @@
+@media (max-width: 820px) {
 .footer {
     position: relative;
     bottom: 0;
@@ -53,8 +54,8 @@
             display: none;
         }
     }
+  }
 }
-
 
 @media (min-width: 1281px) {
 
@@ -67,6 +68,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        hr {
+            display: none;
+        }
     
         .container {
             margin: 80px 400px 80px 400px;
