@@ -1,7 +1,7 @@
 import Header from "../NavBar/NavBar";
 import MainRegistration from "./MainRegistration"
 import Footer from "../Footer/Footer";
-import "./RegistrationPage.css"
+import "./RegistrationPage.scss"
 
 
 export default function RegistrationPage(){

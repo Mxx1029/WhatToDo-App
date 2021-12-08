@@ -1,6 +1,6 @@
 import RegistrationText from "./RegistrationText"
 import RegistrationForm from "./RegistrationForm"
-import "./MainRegistration.css"
+import "./MainRegistration.scss"
 
 
 export default function RegistrationPage(){

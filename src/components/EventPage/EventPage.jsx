@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router";
 import moment from "moment";
 import EventDateSinglepage from "./EventDateSinglepage";
-import EventMailto from "./EventMailto";
+import Mailto from "./Mailto";
 
 
 import "./EventPage.scss";
@@ -112,9 +112,9 @@ export default function EventPage(event) {
                   {phone ? <p>phone: {phone}</p> : null}   
                   <br />
                   {email 
-                    ? <EventMailto email={email} subject={name} body="Hello!" className="event-email">
+                    ? <Mailto email={email} subject={name} body="Hello!" className="event-email">
                           Email
-                      </EventMailto>
+                      </Mailto>
                     : null}
                 
                   <br />
