@@ -3,13 +3,13 @@ import "./NavBar.scss";
 import logo from "../../images/what toDo.png";
 import { FaSearch } from "react-icons/fa";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { FaBars } from "react-icons/fa";
+import { FaSignInAlt } from "react-icons/fa";
 
 export default function NavBar(){
-    const {hamburguerOpen, setHamburgerOpen} = useState(false);
+    const {menuOpen, setMenuOpen} = useState(false);
 
-    const toogleHamburger = () => {
-        setHamburgerOpen(!hamburguerOpen);
+    const toogleMenu = () => {
+        setMenuOpen(!menuOpen);
     }
 
     return(
@@ -22,7 +22,7 @@ export default function NavBar(){
                 <button className="btn-navbar">LOG IN!</button>
                 <FaSearch className="mobile-search-icon" /> 
                 <FaRegHeart className="heart" /> 
-                <FaBars className="mobile-menu-bars" onClick={toogleHamburger} />
+                <FaSignInAlt className="mobile-menu" onClick={toogleMenu} />
             </div>
         </div>
     )
