@@ -87,13 +87,14 @@ export default function EventPage(event) {
           </div>
          
           <div className="event-description">
-            <p>
+            <p className="desktop-description">{description}</p>
+            <p className="mobile-description">
               {description 
               ? showMore ? description : `${description.substring(0, 250)}` 
               : null}
               </p>
            <button className="btn-more-less" onClick={() => setShowMore(!showMore)} >
-              {showMore ? <>Show all <FaAngleUp /></> : <>Show less <FaAngleDown /></>}
+              {showMore ? <>Show less <FaAngleUp className="arrow"/></> : <>Show all <FaAngleDown className="arrow"/></>}
            </button> 
 
           </div>
