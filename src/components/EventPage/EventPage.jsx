@@ -62,10 +62,11 @@ export default function EventPage(event) {
     start_date,
     end_date,
   } = eventData;
+  
 
   const startDate = moment(start_date);
   const endDate = moment(end_date);
-  console.log("this is the description ", description);
+ 
   return (
     <main id="event-main">
       <div className="event-container">

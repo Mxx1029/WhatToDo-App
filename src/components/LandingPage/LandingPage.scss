@@ -1,4 +1,5 @@
-.search-nav {
+@media (max-width: 820px) {
+   .search-nav {
     display: block;
     
     .top {
@@ -7,9 +8,9 @@
     margin: 0 auto;
     line-height: 2em;
    }
-}
+   }
 
-.search-results {
+   .search-results {
     width: 80vw; 
     margin-left: 30px;
 
@@ -36,17 +37,17 @@
      button.display-grid {
         right: 24px;
      }
+   }
+   
+   main {
+       width: 73vw; //single
+       margin: auto;
+       display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;   
+   }
+
 }
-
-main {
-    width: 73vw; //single
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;   
-}
-
-
 
 
 @media (min-width: 1281px) {

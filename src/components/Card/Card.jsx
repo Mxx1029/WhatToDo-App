@@ -18,11 +18,8 @@ export default function Card({event}) {
   return (
     <div className="card-container">
       <div className="image-container">
-        {/* Event image */}
-        <img src={image ? image : defaultImage} alt="" className="event-img row column" />
-
-        <EventDateCard event={event} /> 
-
+        <img src={image ? image : defaultImage} alt="" className="event-img" />
+         <EventDateCard event={event} /> 
       </div>
       <div className="card-text">
         <h5 className="card-title">{name}</h5>

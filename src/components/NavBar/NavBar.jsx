@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./NavBar.scss";
 import logo from "../../images/what toDo.png";
-import { FaSearch } from "react-icons/fa";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { FaSignInAlt } from "react-icons/fa";
+import {FaSearch, FaHeart, FaRegHeart,FaSignInAlt} from "react-icons/fa";
+
 
 export default function NavBar() {
   const { menuOpen, setMenuOpen } = useState(false);

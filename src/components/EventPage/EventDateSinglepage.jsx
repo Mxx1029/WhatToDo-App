@@ -3,7 +3,7 @@ import moment from "moment";
 
 
 
-  export default function EventDateSinglepage({event}) {
+  export default function EventDateSinglepage(event) {
     const { start_date, end_date } = event;
 
     const startMoment = moment(start_date);
