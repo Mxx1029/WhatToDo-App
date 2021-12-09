@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 // import { useForm } from 'react-hook-form';
-import "./LoginForm.scss"
 import LandingPage from '../LandingPage/LandingPage';
+import "./LoginForm.scss";
 
 export default function LoginForm() {
   const [user, setUser] = useState({
@@ -68,7 +68,7 @@ export default function LoginForm() {
 
       <p>Forgot your password ?</p>
 
-      <input type="submit" value="Log in"/>
+      <input type="submit" value="Log in" className="submit-login"/>
     </form>
   );
 }
