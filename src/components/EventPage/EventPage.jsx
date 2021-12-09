@@ -73,7 +73,7 @@ export default function EventPage(event) {
         <div className="event-image">
           <img src={image} alt="" />
           <p className="event-date">
-            <EventDateSinglepage event={event} />
+            <EventDateSinglepage eventData={eventData} />
           </p>
         </div>
         <div className="event-about">
