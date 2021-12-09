@@ -3,8 +3,8 @@ import moment from "moment";
 
 
 
-  export default function EventDateSinglepage({event}) {
-    const { start_date, end_date } = event;
+  export default function EventDateSinglepage({eventData}) {
+    const { start_date, end_date } = eventData;
 
     const startMoment = moment(start_date);
     const startDate = startMoment.format("D MMM");

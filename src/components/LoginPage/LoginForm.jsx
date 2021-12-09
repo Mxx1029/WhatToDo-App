@@ -3,6 +3,7 @@ import axios from 'axios';
 import "./LoginForm.scss";
 import { useNavigate } from "react-router-dom";
 
+
 export default function LoginForm() {
   const [user, setUser] = useState({
     name:" ",
@@ -66,7 +67,7 @@ export default function LoginForm() {
       
       <ul>{err?.map((e) => (<li>{e}</li>))}</ul>
 
-      <input type="submit" value="Log in"/>
+      <input type="submit" value="Log in" className="submit-login"/>
     </form>
   );
 }

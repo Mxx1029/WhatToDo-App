@@ -17,10 +17,13 @@ import {
   FaInstagramSquare,
   FaHeart,
   FaRegHeart,
+  FaAngleDown,
+  FaAngleUp
 } from "react-icons/fa";
 
 export default function EventPage(event) {
   const [eventData, setEventData] = useState([]);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     fetchEvents();
@@ -40,7 +43,7 @@ export default function EventPage(event) {
         console.log(err);
       });
   };
-
+  
   const {
     address,
     booking_required,
@@ -59,17 +62,18 @@ export default function EventPage(event) {
     start_date,
     end_date,
   } = eventData;
+  
 
   const startDate = moment(start_date);
   const endDate = moment(end_date);
-
+ 
   return (
     <main id="event-main">
       <div className="event-container">
         <div className="event-image">
           <img src={image} alt="" />
           <p className="event-date">
-            <EventDateSinglepage event={event} />
+            <EventDateSinglepage eventData={eventData} />
           </p>
         </div>
         <div className="event-about">
@@ -82,9 +86,18 @@ export default function EventPage(event) {
             <FaRegHeart />
             <h5>ATTENDING</h5>
           </div>
-          
+         
           <div className="event-description">
-            <p>{description}</p>
+            <p className="desktop-description">{description}</p>
+            <p className="mobile-description">
+              {description 
+              ? showMore ? description : `${description.substring(0, 250)}` 
+              : null}
+              </p>
+           <button className="btn-more-less" onClick={() => setShowMore(!showMore)} >
+              {showMore ? <>Show less <FaAngleUp className="arrow"/></> : <>Show all <FaAngleDown className="arrow"/></>}
+           </button> 
+
           </div>
         </div>
         <div className="event-info">
@@ -109,7 +122,6 @@ export default function EventPage(event) {
           <div className="price">
             <div className="item-info">
               <h5>Price and Bookings</h5>
-
               {free_event ? <p>FREE</p> : <p>Price: {price} €</p>}
               <br />
               {booking_required ? <p>Booking Required</p> : null}

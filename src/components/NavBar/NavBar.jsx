@@ -1,9 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import {Link} from "react-router-dom";
 import "./NavBar.scss";
 import logo from "../../images/what toDo.png";
-import { FaSearch } from "react-icons/fa";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
-import { FaSignInAlt } from "react-icons/fa";
+import {FaSearch, FaHeart, FaRegHeart,FaSignInAlt} from "react-icons/fa";
 import { useNavigate, Link } from "react-router-dom";
 
 export default function NavBar(){
@@ -11,10 +10,31 @@ export default function NavBar(){
     const navigate = useNavigate()
     const {menuOpen, setMenuOpen} = useState(false);
 
-    const toogleMenu = () => {
-        setMenuOpen(!menuOpen);
-    }
+export default function NavBar() {
+  const { menuOpen, setMenuOpen } = useState(false);
 
+  const toogleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  return (
+    <div className="navbar">
+      <Link to={"/"} >
+          <div className="logo">
+            <img src={logo} alt="Logo WhatToDo" />
+          </div>
+       </Link>
+      
+      <div className="nav">
+        <button className="btn-navbar">LIST AN EVENT</button>
+        <button className="btn-navbar">LOG IN!</button>
+        <FaSearch className="mobile-search-icon" />
+        <FaRegHeart className="heart" />
+        <FaSignInAlt className="mobile-menu" onClick={toogleMenu} />
+      </div>
+    </div>
+  );
+}
     const logoutHandler = () => {
         localStorage.removeItem("isLogin")
         navigate("/")   
@@ -35,3 +55,4 @@ export default function NavBar(){
         </div>
     )
 }
+
