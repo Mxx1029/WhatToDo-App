@@ -1,7 +1,6 @@
 import "./Form.scss"
 import React, { useState} from 'react';
 import axios from "axios";
-// import { useForm } from 'react-hook-form';
 import { FaCloudUploadAlt } from "react-icons/fa";
 
 
@@ -9,6 +8,7 @@ import { FaCloudUploadAlt } from "react-icons/fa";
 export default function Form(){
     const [ listing, setListing] = useState({});
     const [ image, setImage] = useState({raw:"", preview:false});
+    const [err, setErr] = useState([]);
 
     const changeHandler = (e) => {
         setListing({...listing, [e.target.name] : e.target.value})
@@ -50,22 +50,21 @@ export default function Form(){
 
 
         axios({
-            url: "http://localhost:3001/users/:userId/events",
+            url: "/users/:userId/events",
             method: "POST",
             data: fd,
             headers: {
                 "Content-type":"multipart/formdata"
             }
-        }).then(res => console.log(res))
-          .catch(err => console.log(err))
-
+        }).then(res => console.log(res, "submitted"))
+          .catch((err) => {
+              console.log(err.response);
+              if(err.response.data.errors) {
+                  setErr(err.response.data.errors)
+              }
+          })
 
     }
-
-
-    // const { register, handleSubmit, formState: { errors } } = useForm();
-    // const onSubmit = data => console.log(data);
-    // console.log(errors);
 
     return(
         <div className="form">
@@ -477,10 +476,12 @@ export default function Form(){
 
                 <p>Please review your listing before you submit and ensure it meets our guidelines.</p>
                 <p>We'll review your listing and let you know the outcome by email.</p>
-
-
-                {/* <button>REVIEW</button>
-                <button>SAVE DRAFT</button> */}
+                
+                <ul>
+                    {err?.map((e) => (
+                    <li>{e}</li>
+                    ))}
+                </ul>
 
 
                 <input type="submit" value="SUBMIT"/>

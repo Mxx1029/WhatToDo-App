@@ -90,6 +90,19 @@
                     transition: background-color .25s ease-in-out;
                 }
             }
+
+            .link-navbar{
+            text-decoration: none;
+            color: black;
+            background-color: transparent;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            &:hover {
+                color: #fff!important;
+                transition: color .25s ease-in-out;
+                transition: background-color .25s ease-in-out;
+            }
+        }
     
         }
     }
