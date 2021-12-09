@@ -105,10 +105,10 @@ const handleSubmit = (e) => {
       />
 
       <ul>
-     {err?.map((e) => (
-         <li>{e}</li>
-     ))}
-    </ul>
+        {err?.map((e) => (
+        <li>{e}</li>
+        ))}
+      </ul>
 
       <input type="submit" value="Register"/>
     </form>

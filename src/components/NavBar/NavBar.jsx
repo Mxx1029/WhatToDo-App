@@ -26,7 +26,7 @@ export default function NavBar(){
                 <Link to="/"><img src={logo} alt ="Logo WhatToDo" /></Link>
             </div>
             <div className="nav">
-                <button className="btn-navbar"><Link to="/create-listing" className="btn-navbar">LIST AN EVENT</Link></button>
+                <button className="btn-navbar"><Link to="/create-listing" className="link-navbar">LIST AN EVENT</Link></button>
                 {isLogin ? <button className="btn-navbar" onClick={logoutHandler}>LOG OUT!</button> : <button className="btn-navbar"><Link to="/login" className="link-navbar">LOG IN!</Link></button>}
                 <FaSearch className="mobile-search-icon" /> 
                 <FaRegHeart className="heart" /> 
