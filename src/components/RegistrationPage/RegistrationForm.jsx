@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, {useState} from 'react';
-// import { useForm } from 'react-hook-form';
+import { useNavigate } from "react-router-dom";
 import "./RegistrationForm.scss";
 
 export default function RegistrationForm() {
@@ -9,6 +9,9 @@ export default function RegistrationForm() {
     email:"",
     password:""
   })
+  const [err, setErr] = useState([]);
+  const navigate = useNavigate();
+  // const [myError, setMyError] = useState("")
 
   const handleChange = (e) => {
     const {name, value} = e.target
@@ -17,23 +20,63 @@ export default function RegistrationForm() {
     })
   }
 
-  // const { register, handleSubmit, formState: { errors } } = useForm();
-  // const onSubmit = data => console.log(data);
-  // console.log(errors);
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log("User registered")
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   setErr([]);
     
-    const {name, email, password} = user
-    if(name && email && password){
-       axios.post("http://localhost:3001/users/", user)
-       .then(response => console.log(response))
-    } else {
-      alert("invalid input")
-    }
-  }
+  //   const {name, email, password} = user
+  //   if(name && email && password){
+  //      axios.post("/users/", user)
+  //      .then(response => setMyError(response.data.error)
+  //      )
+      
+  //   } else {
+  //     alert("invalid input")
+  //   }
+  // }
+
+  // const handleSubmit = (e) => {
+  //       e.preventDefault();
+  //       setErr([]);
+  //       axios({
+  //           url: '/users/',
+  //           method: 'POST',
+  //           data: user
+  //       }).then((res) => {
+  //           console.log(res.data);
+  //           if (res.data.errors) {
+  //               setErr([...res.data.errors]);
+  //           } else {
+  //               alert('Successfully Registered')
+  //           }
+  //       }).catch(err => {
+  //           console.log(err.errors);
+  //       })
+  //   }
   
+
+  
+
+const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("User registered");
+        const { name, email, password } = user;
+        if (name && email && password) {
+            axios
+                .post("/users", user)
+                .then((response) => {
+                    navigate("/login");
+                })
+                .catch((err) => {
+                    console.log(err.response);
+                    if (err.response.data.errors) {
+                        setErr(err.response.data.errors);
+                    }
+                });
+        }
+    };
+
+
   return (
     <form onSubmit={handleSubmit} className="register-form">
       <label htmlFor="name">NAME</label>
@@ -42,7 +85,6 @@ export default function RegistrationForm() {
         name="name"
         value={user.name}
         onChange={handleChange}
-        // {...register("Name", {max: 20, min: 3})} 
       />
       <label htmlFor="email">EMAIL</label>
       <input 
@@ -50,8 +92,9 @@ export default function RegistrationForm() {
         name="email"
         value={user.email}
         onChange={handleChange}
-        // {...register("Email", {required: true, pattern: /^\S+@\S+$/i})} 
       />
+
+      {/* <span>{myError ? myError : null }</span> */}
 
       <label htmlFor="password">PASSWORD</label>
       <input 
@@ -59,10 +102,13 @@ export default function RegistrationForm() {
         name="password"
         value={user.password}
         onChange={handleChange}
-        // {...register("Password", {max: 20, min: 8})} 
       />
 
-      <p>Forgot your password ?</p>
+      <ul>
+     {err?.map((e) => (
+         <li>{e}</li>
+     ))}
+    </ul>
 
       <input type="submit" value="Register"/>
     </form>

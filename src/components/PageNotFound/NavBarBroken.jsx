@@ -1,5 +1,5 @@
-import "./NavBarBroken.scss"
-import logo from "../../images/what toDo.png"
+import "./NavBarBroken.scss";
+import logo from "../../images/what toDo.png";
 import { FaHeartBroken } from "react-icons/fa";
 
 

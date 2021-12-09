@@ -21,7 +21,7 @@ export default function LandingPage() {
 
   const fetchEvents = () => {
     axios
-      .get("http://localhost:9012/events/today") //this should be POST to be able to add diff variables to search context
+      .get("/events/today") //this should be POST to be able to add diff variables to search context
       .then((res) => {
         console.log(res);
         setEvents(res.data);

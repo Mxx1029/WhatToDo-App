@@ -1,5 +1,5 @@
-import "./MainPageNotFound.scss"
-import sorry from "../../images/mariasorry.gif"
+import "./MainPageNotFound.scss";
+import sorry from "../../images/mariasorry.gif";
 
 export default function MainPageNotFound(){
 
