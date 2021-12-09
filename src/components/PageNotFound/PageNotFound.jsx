@@ -1,7 +1,8 @@
-import NavBarBroken from "./NavBarBroken.jsx"
-import MainPageNotFound from "./MainPageNotFound"
-import Footer from "../Footer/Footer"
-import "./PageNotFound.scss"
+import React from "react";
+import NavBarBroken from "./NavBarBroken";
+import MainPageNotFound from "./MainPageNotFound";
+import Footer from "../Footer/Footer";
+import "./PageNotFound.scss";
 
 
 export default function PageNotfound(){
