@@ -9,8 +9,8 @@ export default function EventDateCard({event}) {
   const endMoment = moment(end_date);
   
   if (startMoment.isSame(endMoment, "day") && startMoment.isSame(endMoment, "month")) { 
-        return <p className="event-date">{startDate}</p>;
+        return <p className="event-date column">{startDate}</p>;
     } else if (startMoment.isSame(endMoment, "month")) {  
-        return ( <p className="event-date">{startMoment.format("D ")} {endMoment.format(" - D MMM")}</p>);
-  } return (<p className="event-date"> {startMoment.format("D MMM")} {endMoment.format(" - D MMM")}</p>);
+        return ( <p className="event-date column">{startMoment.format("D ")} {endMoment.format(" - D MMM")}</p>);
+  } return (<p className="event-date column"> {startMoment.format("D MMM")} {endMoment.format(" - D MMM")}</p>);
 };

@@ -5,46 +5,89 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0px 4px 6px 3px rgba(0, 0, 0, 0.25);
 
     .logo {
         color: black;
         justify-self: start;
         cursor: pointer;
         padding-top: 20px;
+        padding-left: 20px;
+
+        img {
+            height: 40px;
+        }
     }
-    
+
     .nav {
-        width: 40%;
+        width: 35%;
+        margin-right: 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        .btn-navbar{
-            background-color: $color-white;
-            border-radius: 15px;
-            width: 120px;
-            height: 30px;
-            text-decoration: none;
-            color: black;
-            background-color: transparent;
-            &:hover {
-                color: #fff!important;
-                border-color: #000;
-                background-color: #000;
-                transition: color .25s ease-in-out;
-                transition: background-color .25s ease-in-out;
-            }
+        .btn-navbar {
+            display: none;
         }
-        .link-navbar{
-            text-decoration: none;
-            color: black;
-            background-color: transparent;
-            &:hover {
-                color: #fff!important;
-                transition: color .25s ease-in-out;
-                transition: background-color .25s ease-in-out;
-            }
+        .mobile-search-icon,
+        .heart,
+        .mobile-menu {
+            font-size: 1.5em;
         }
 
-    }
 }
+
+}
+
+@media (min-width: 1281px) {
+    .navbar {
+        height: 85px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: none;
+    
+        .logo {
+            color: black;
+            justify-self: start;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 30px 0;
+            img {
+                height: 90%;
+            }
+        }
+        
+        .nav {
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .mobile-search-icon,
+            .mobile-menu-bars {
+                display:none;
+            }
+            .heart {
+                font-size: 3em;
+            }
+    
+            .btn-navbar{
+                display: unset;
+                background-color: $color-white;
+                border-radius: 15px;
+                width: 120px;
+                height: 30px;
+                &:hover {
+                    color: #fff!important;
+                    border-color: #000;
+                    background-color: #000;
+                    transition: color .25s ease-in-out;
+                    transition: background-color .25s ease-in-out;
+                }
+            }
+    
+        }
+    }
+}    
+    

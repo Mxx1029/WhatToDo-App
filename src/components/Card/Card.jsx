@@ -19,7 +19,7 @@ export default function Card({event}) {
     <div className="card-container">
       <div className="image-container">
         {/* Event image */}
-        <img src={image ? image : defaultImage} alt="" className="event-img" />
+        <img src={image ? image : defaultImage} alt="" className="event-img row column" />
 
         <EventDateCard event={event} /> 
 
