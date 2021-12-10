@@ -30,11 +30,14 @@
             display: none;
         }
         .mobile-search-icon,
-        .heart,
-        .mobile-menu {
+        .heart-icon,
+        .login-icon {
             font-size: 1.5em;
         }
-
+        a {
+            color: black;
+            height: 24px;
+        }
 }
 
 }

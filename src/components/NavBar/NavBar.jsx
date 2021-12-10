@@ -11,11 +11,6 @@ export default function NavBar(){
     const {menuOpen, setMenuOpen} = useState(false);
 
 export default function NavBar() {
-  const { menuOpen, setMenuOpen } = useState(false);
-
-  const toogleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
 
   return (
     <div className="navbar">
@@ -29,8 +24,10 @@ export default function NavBar() {
         <button className="btn-navbar">LIST AN EVENT</button>
         <button className="btn-navbar">LOG IN!</button>
         <FaSearch className="mobile-search-icon" />
-        <FaRegHeart className="heart" />
-        <FaSignInAlt className="mobile-menu" onClick={toogleMenu} />
+        <FaRegHeart className="heart-icon" />
+         <Link to={"/login"} >
+            <FaSignInAlt className="login-icon" />
+         </Link>
       </div>
     </div>
   );
