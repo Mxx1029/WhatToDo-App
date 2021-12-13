@@ -1,6 +1,7 @@
 import "./Form.scss"
 import React, { useState} from 'react';
 import axios from "axios";
+import { useUserContext } from "../../context/UserContext"
 import { FaCloudUploadAlt } from "react-icons/fa";
 
 
@@ -9,6 +10,8 @@ export default function Form(){
     const [ listing, setListing] = useState({});
     const [ image, setImage] = useState({raw:"", preview:false});
     const [err, setErr] = useState([]);
+    const { user, userContext } = useUserContext()
+    console.log(user)
 
     const changeHandler = (e) => {
         setListing({...listing, [e.target.name] : e.target.value})
@@ -50,11 +53,12 @@ export default function Form(){
 
 
         axios({
-            url: "/users/:userId/events",
+            url: `/users/${user._id}/events`,
             method: "POST",
             data: fd,
             headers: {
-                "Content-type":"multipart/formdata"
+                "Content-type":"multipart/formdata",
+                "Authorization": "bearer " + localStorage.getItem("token")
             }
         }).then(res => console.log(res, "submitted"))
           .catch((err) => {

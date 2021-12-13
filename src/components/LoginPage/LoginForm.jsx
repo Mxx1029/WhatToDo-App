@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import "./LoginForm.scss";
 import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../../context/UserContext"
 
 export default function LoginForm() {
   const [user, setUser] = useState({
     name:" ",
     password:" "
   });
+
+  const ctx = useUserContext()
 
   const [loginStatus, setLoginStatus] = useState(false)
   const [err, setErr] = useState([]);
@@ -30,6 +33,10 @@ export default function LoginForm() {
           if(response.status == 200){
             if(response.data.token){
             localStorage.setItem("isLogin", true)
+            const userString = JSON.stringify(response.data.user)
+            localStorage.setItem("user", userString)
+            localStorage.setItem("token", response.data.token)
+            ctx.setUser(response.data.user)
             navigate("/")
             return console.log("test")
           }alert(`${response.data.errors[0]}`)

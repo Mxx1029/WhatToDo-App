@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import  { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './components/LandingPage/LandingPage';
 import Event from "./components/EventPage/Event";
@@ -6,10 +6,21 @@ import PageNotFound from "./components/PageNotFound/MainPageNotFound";
 import RegistrationPage from "./components/RegistrationPage/RegistrationPage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import CreateListingPage from "./components/CreateListingPage/CreateListingPage";
-
 import './App.css';
+import { useUserContext } from "./context/UserContext"
 
 function App() {
+
+  const {user, setUser } = useUserContext()
+
+  useEffect(()=>{
+    const userLocal = localStorage.getItem("user")
+    if(userLocal && !user){
+      const userData = JSON.parse(userLocal)
+      setUser(userData)
+    }
+  })
+
   return (
  
       <div className="App">

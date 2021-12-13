@@ -16,7 +16,7 @@ export default function NavBar(){
     }
 
     const logoutHandler = () => {
-        localStorage.removeItem("isLogin")
+        localStorage.clear()
         navigate("/")   
     }
     
