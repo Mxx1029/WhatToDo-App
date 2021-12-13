@@ -20,7 +20,7 @@
     }
 
     .nav {
-        width: 35%;
+        width: 45%;
         margin-right: 20px;
         display: flex;
         align-items: center;
@@ -29,6 +29,7 @@
         .btn-navbar {
             display: none;
         }
+        .create-event-mobile-icon,
         .mobile-search-icon,
         .heart-icon,
         .login-icon {
@@ -73,6 +74,7 @@
             align-items: center;
             justify-content: space-between;
 
+            .create-event-mobile-icon,
             .mobile-search-icon,
             .login-icon,
             .search-mobile {
