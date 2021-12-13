@@ -13,6 +13,7 @@ export default function LandingPage() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [direction, setDirection] = useState();
+  
 
   useEffect(() => {
     fetchEvents();
