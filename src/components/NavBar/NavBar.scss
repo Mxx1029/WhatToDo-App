@@ -39,6 +39,11 @@
             height: 24px;
         }
     }
+    .search-mobile {
+        background-color: transparent;
+        border: none;
+        transition: all 0.25s ease;
+      }
   }
 
 }
@@ -69,13 +74,13 @@
             justify-content: space-between;
 
             .mobile-search-icon,
-            .login-icon {
+            .login-icon,
+            .search-mobile {
                 display:none;
             }
             .heart-icon {
                 font-size: 3em;
             }
-    
             .btn-navbar{
                 display: unset;
                 background-color: $color-white;

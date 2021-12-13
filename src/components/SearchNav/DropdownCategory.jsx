@@ -29,19 +29,19 @@ const events = [
     return(
         <div className="select">
             <select value={filter} onChange={e => setFilter(e.target.value)} className="standard-select">
-                <option value="anything">Anything</option>
-                <option value="free">Free</option>
-                <option value="workshop">Workshop</option>
-                <option value="family">Family</option>
-                <option value="market">Market</option>
-                <option value="food and drinks">Food and drinks</option>
-                <option value="reading">Reading</option>
-                <option value="opening">Opening</option>
-                <option value="exhibition">Exhibition</option>
-                <option value="performing Arts">Performing Arts</option>
-                <option value="film">Film</option>
-                <option value="music">Music</option>
-                <option value="party">Party</option>
+                <option className="option-category" value="anything">Anything</option>
+                <option className="option-category" value="free">Free</option>
+                <option className="option-category" value="workshop">Workshop</option>
+                <option className="option-category" value="family">Family</option>
+                <option className="option-category" value="market">Market</option>
+                <option className="option-category" value="food and drinks">Food and drinks</option>
+                <option className="option-category" value="reading">Reading</option>
+                <option className="option-category" value="opening">Opening</option>
+                <option className="option-category" value="exhibition">Exhibition</option>
+                <option className="option-category" value="performing Arts">Performing Arts</option>
+                <option className="option-category" value="film">Film</option>
+                <option className="option-category" value="music">Music</option>
+                <option className="option-category" value="party">Party</option>
             </select>
             {/* <ul>
                 {filtered.map(x => <li key={x.id}>{x.name}</li>)}
