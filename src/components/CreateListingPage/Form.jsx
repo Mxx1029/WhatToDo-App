@@ -60,7 +60,7 @@ export default function Form(){
                 "Content-type":"multipart/formdata",
                 "Authorization": "bearer " + localStorage.getItem("token")
             }
-        }).then(res => console.log(res, "submitted"))
+        }).then(response => console.log(response.data, "submitted"))
           .catch((err) => {
               console.log(err.response);
               if(err.response.data.errors) {
@@ -114,7 +114,7 @@ export default function Form(){
                             className="hide-box" 
                             id="2" type="radio" 
                             name="category" 
-                            value=" Workshop" 
+                            value="Workshop" 
                             onChange={changeHandler}
                         />
                         <label htmlFor="2" className="categ-radio">
@@ -128,7 +128,7 @@ export default function Form(){
                             id="3" 
                             type="radio" 
                             name="category" 
-                            value=" Family" 
+                            value="Family" 
                             onChange={changeHandler}
                         />
                         <label htmlFor="3" className="categ-radio">
@@ -141,7 +141,7 @@ export default function Form(){
                             id="4" 
                             type="radio" 
                             name="category" 
-                            value=" Market"
+                            value="Market"
                             onChange={changeHandler}
                         />
                         <label htmlFor="4" className="categ-radio">
@@ -154,7 +154,7 @@ export default function Form(){
                             className="hide-box" 
                             id="5" type="radio" 
                             name="category" 
-                            value=" Food and Drinks"
+                            value="Food"
                             onChange={changeHandler}
                         />
                         <label htmlFor="5" className="categ-radio">
@@ -167,7 +167,7 @@ export default function Form(){
                             className="hide-box"  
                             id="6" type="radio" 
                             name="category" 
-                            value=" Reading"
+                            value="Reading"
                             onChange={changeHandler}
                         />
                         <label htmlFor="6" className="categ-radio">
@@ -193,7 +193,7 @@ export default function Form(){
                             className="hide-box" 
                             id="8" type="radio" 
                             name="category" 
-                            value=" Performing Arts"
+                            value="Performing_arts"
                             onChange={changeHandler}
                         />
                         <label htmlFor="8" className="categ-radio">
