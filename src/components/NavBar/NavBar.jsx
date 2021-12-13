@@ -8,7 +8,7 @@ import {FaSearch, FaHeart, FaRegHeart,FaSignInAlt, FaSignOutAlt} from "react-ico
 export default function NavBar(){
   const [modal, setModal] = useState(false);
   const Toggle = () => setModal(!modal);//to open mobile search modal
-  const isLogin = localStorage.getItem("isLogin");
+  const isLogin = localStorage.clear();
   const navigate = useNavigate();
   const logoutHandler = () => {
     localStorage.clear()
