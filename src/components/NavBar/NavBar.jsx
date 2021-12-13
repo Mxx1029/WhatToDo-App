@@ -8,10 +8,9 @@ export default function NavBar(){
     const isLogin = localStorage.getItem("isLogin")
     const navigate = useNavigate()
     const logoutHandler = () => {
-      localStorage.removeItem("isLogin")
-      navigate("/")   
-      }
-
+        localStorage.clear()
+        navigate("/")   
+    }
     
  return(
         <div className="navbar">
