@@ -20,9 +20,9 @@
        background-color: white;
        box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
    
-       &_header {
+       .search-modal_header {
          position: relative;
-         &-title {
+         .search-modal-header-title {
            text-align: left;
            font-size: 1.2em;
          }
@@ -38,11 +38,11 @@
          }
        }
    
-       &_content {
+       .search-modal_content {
          padding: 2rem 0;
        }
    
-       &_footer {
+       .search-modal_footer {
          padding: 2rem 0;
          padding-bottom: 0;
          display: flex;
