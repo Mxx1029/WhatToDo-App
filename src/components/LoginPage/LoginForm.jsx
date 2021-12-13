@@ -26,13 +26,13 @@ export default function LoginForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("user is logged in")
     const headers = { "Content-Type": "application/json"}
 
     axios.post("/users/login", user, headers)
         .then(response => {
           if(response.status == 200){
             if(response.data.token){
+            console.log("user is logged in")
             localStorage.setItem("isLogin", true)
             const userString = JSON.stringify(response.data.user)
             localStorage.setItem("user", userString)
