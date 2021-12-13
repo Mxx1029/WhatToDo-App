@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import  { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LandingPage from './components/LandingPage/LandingPage';
 import Event from "./components/EventPage/Event";
-import PageNotFound from "./components/PageNotFound/MainPageNotFound";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
 import RegistrationPage from "./components/RegistrationPage/RegistrationPage";
 import LoginPage from "./components/LoginPage/LoginPage";
 import CreateListingPage from "./components/CreateListingPage/CreateListingPage";

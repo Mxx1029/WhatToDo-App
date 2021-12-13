@@ -12,20 +12,19 @@
         line-height: 1.5em;
         display: block;
         margin-left: 10px;  
-        .line{
+        .line {
                 color:white;
                 width: 95%;
                 margin-top: 0;
                 margin-bottom: 0;
-
             }
 
-        .contact{
+        .contact {
             width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            text-align: center;
+            text-align: left;
             
             .contact-whattodo {
                 font-size: 1.3em;

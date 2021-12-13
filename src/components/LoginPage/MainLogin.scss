@@ -1,6 +1,16 @@
-.main {
-    margin-top: 150px;
-    display: flex;
-    justify-content: space-between;
-    height: 600px;
-}
+@media (max-width: 820px) {
+    .main {
+        margin-top: 50px;
+        display: block;
+        // height: 80vh;
+    } 
+}    
+
+@media (min-width: 1281px) {
+    .main {
+        margin-top: 150px;
+        display: flex;
+        justify-content: space-between;
+        height: 600px;
+    }
+}    
