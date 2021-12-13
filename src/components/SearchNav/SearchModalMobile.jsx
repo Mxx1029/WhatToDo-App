@@ -25,7 +25,7 @@ const SearchModalMobile =  ({ show, close, title })  => {
           <main className="search-modal_content">
           <DropdownCategory />
           <DropdownDate />
-          <input type="text" placeholder="Keyword" name="s" className="keyword-mobile"/>
+          <input type="text" placeholder=" Keyword" name="s" className="keyword-mobile"/>
           </main>
           <footer className="search-modal_footer">
             <button className="submit-mobile-search" type="submit">GO</button> 

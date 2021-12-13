@@ -1,6 +1,13 @@
-.top {
+@media (max-width: 820px) {
+
+}
+
+
+@media (min-width: 1281px) {
+  .top {
     margin: 80px 400px 80px 400px;
     width: 1000px;
     margin: 0 auto;
     line-height: 2em;
-}
+  }
+}  
