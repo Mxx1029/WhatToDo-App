@@ -3,6 +3,8 @@ import axios from "axios";
 import { useParams } from "react-router";
 import moment from "moment";
 import EventDateSinglepage from "./EventDateSinglepage";
+import {eventDefaultImages} from "../../images/defaultImagesDB/defaultImagesDB";
+
 import Mailto from "./Mailto";
 
 import "./EventPage.scss";
@@ -66,12 +68,15 @@ export default function EventPage(event) {
 
   const startDate = moment(start_date);
   const endDate = moment(end_date);
- 
+  
+  //print a random default image of the array db
+  let defaultImage = eventDefaultImages[Math.floor(Math.random()*eventDefaultImages.length)];
+
   return (
     <main id="event-main">
       <div className="event-container">
         <div className="event-image">
-          <img src={image} alt="" />
+          <img src={image ? image : defaultImage} alt="event"  />
           <p className="event-date">
             <EventDateSinglepage eventData={eventData} />
           </p>

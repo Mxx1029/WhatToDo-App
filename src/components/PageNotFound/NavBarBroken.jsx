@@ -18,7 +18,7 @@ export default function NavBarBroken(){
             <div className="nav">
                 <button className="btn-navbar">LIST AN EVENT</button>
                 <button className="btn-navbar">LOG IN!</button>
-                <div className="heart"><FaHeartBroken /></div>
+                <div className="broken-heart"><FaHeartBroken /></div>
             </div>
         </div>
     )
