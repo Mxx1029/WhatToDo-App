@@ -1,4 +1,4 @@
-import Header from "../NavBar/NavBar";
+import RegNavBar from "./RegNavBar";
 import MainRegistration from "./MainRegistration"
 import Footer from "../Footer/Footer";
 import "./RegistrationPage.scss"
@@ -9,7 +9,7 @@ export default function RegistrationPage(){
     return(
         <div>
             <div className="top">
-                <Header />
+            <RegNavBar />
                 <MainRegistration />
             </div>
             <Footer />

@@ -27,23 +27,36 @@
 }
 @media (min-width: 1281px) {
   .login-text {
-    width: 50%;
-
+    width: 36%;
+    margin-top: 30px;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+        width: 200px;
+    }
     .login-title-desktop {
       display: unset;
     	font-size: 2.5em;
       width: 200px;
     }
-
+    .login-title-mobile {
+      display: none;
+    }
+    .create-account {
+      display: inline-block;
+    }
     p {
-      color: black;
-      display: inline-block;
+        color: black;
+        display: inline-block;
     }
+    
+    
     .arrow {
-      display: inline-block;
-      margin-left:10px;
+        display: inline-block;
+        margin-left:10px;
     }
-  }
+  
 }
 
 

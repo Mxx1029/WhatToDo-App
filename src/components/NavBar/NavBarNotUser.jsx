@@ -7,9 +7,9 @@ import {
   FaHeart,
   FaRegHeart,
 } from "react-icons/fa";
-// import "./NavBarNotLogged.scss";
+import "./NavBarUser.scss";
 
-export default function NavBarNotLogged() {
+export default function NavBarNotUser() {
   return (
     <div className="nav">
       <Link to="/login" className="link-navbar">

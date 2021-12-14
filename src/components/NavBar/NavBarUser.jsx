@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { FaSignOutAlt, FaRegEdit, FaHeart, FaRegHeart } from "react-icons/fa";
-import "./NavBarLogged.scss";
+import "./NavBarUser.scss";
 
-export default function NavBarLogged() {
+export default function NavBarUser() {
   const navigate = useNavigate();
   const logoutHandler = () => {
     localStorage.clear();
@@ -27,10 +27,10 @@ export default function NavBarLogged() {
         <FaSignOutAlt className="login-icon" />
       </Link>
 
-      <Link to={"/whishlist"}>
+      <Link to={"/wishlist"}>
         <FaHeart className="heart-icon" />
       </Link>
-      
+
     </div>
   );
 }

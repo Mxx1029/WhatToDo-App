@@ -268,7 +268,7 @@ export default function Form(){
                         name="summary"
                         onChange={changeHandler}
                     />
-                    <p className="characters-limit">0/100</p>
+                    <p className="characters-limit">max. 100</p>
                 </div>
                 <div>
                     <label htmlFor="description">Description</label>
@@ -278,7 +278,7 @@ export default function Form(){
                         name="description"
                         onChange={changeHandler}
                     />
-                    <p className="characters-limit">0/1000</p>
+                    <p className="characters-limit">max. 1000</p>
                 </div>
 
                 <h2>DATE AND TIME</h2>

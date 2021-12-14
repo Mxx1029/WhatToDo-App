@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import NavBarNotLogged from "./NavBarNotLogged";
-import NavBarLogged from "./NavBarLogged";
+import NavBarNotUser from "./NavBarNotUser";
+import NavBarUser from "./NavBarUser";
 import SearchModalMobile from "../SearchNav/SearchModalMobile";
 import "./NavBar.scss";
 import logo from "../../images/what toDo.png";
@@ -9,7 +9,7 @@ import { FaSearch } from "react-icons/fa";
 
 export default function NavBar() {
   const [modal, setModal] = useState(false);
-  const Toggle = () => setModal(!modal); //to open mobile search modal
+  const toggle = () => setModal(!modal); //to open mobile search modal
   const isLogin = localStorage.getItem("isLogin");
 
   return (
@@ -21,19 +21,19 @@ export default function NavBar() {
       </div>
 
       <div className="nav-wrapper">
-        <button className="search-mobile" onClick={() => Toggle()}>
+        <button className="search-mobile" onClick={() => toggle()}>
           <FaSearch className="mobile-search-icon" />
         </button>
         <SearchModalMobile
           show={modal}
           title="WHAT TO DO TODAY...?"
-          close={Toggle}
+          close={toggle}
         />
 
-        {isLogin ? <NavBarLogged /> : <NavBarNotLogged />}
+        {isLogin ? <NavBarUser /> : <NavBarNotUser />}
 
       </div>
-      
+
     </div>
   );
 }
