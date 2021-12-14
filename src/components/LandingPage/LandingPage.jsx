@@ -42,7 +42,7 @@ export default function LandingPage() {
     <div className="search-nav">
       <div className="top">
         <Header />
-        <SearchNav />
+        <SearchNav  setEvents={setEvents}/>
       </div>
       <div className="search-results">
         <h2>WHAT TO DO ...TODAY?</h2>
