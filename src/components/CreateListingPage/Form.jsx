@@ -72,7 +72,7 @@ export default function Form(){
 
     return(
         <div className="form">
-            <h1>CREATE LISTING</h1>
+            <h1><span>CREATE LISTING</span></h1>
             <form enctype="multipart/form-data" onSubmit={submitHandler}>
                 <div>
                     <label htmlFor="name">Listing Name</label>
@@ -268,6 +268,7 @@ export default function Form(){
                         name="summary"
                         onChange={changeHandler}
                     />
+                    <p className="characters-limit">max. 100</p>
                 </div>
                 <div>
                     <label htmlFor="description">Description</label>
@@ -277,6 +278,7 @@ export default function Form(){
                         name="description"
                         onChange={changeHandler}
                     />
+                    <p className="characters-limit">max. 1000</p>
                 </div>
 
                 <h2>DATE AND TIME</h2>
@@ -361,7 +363,7 @@ export default function Form(){
                         id="price" 
                         name="price"
                         onChange={changeHandler}
-                    />
+                    />€
                 </div>
 
                 <div>

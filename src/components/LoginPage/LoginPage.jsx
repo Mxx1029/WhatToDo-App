@@ -1,4 +1,4 @@
-import Header from "../NavBar/NavBar";
+import LoginNavBar from "./LoginNavBar";
 import MainLogin from "./MainLogin";
 import Footer from "../Footer/Footer";
 import "./LoginPage.scss"
@@ -9,7 +9,7 @@ export default function LoginPage(){
     return(
         <div>
         <div className="top">
-            <Header />
+            <LoginNavBar />
             <MainLogin />
         </div>
         <Footer />

@@ -11,5 +11,6 @@ export default function LoginText(){
             <p className="create-account">Don't have an account? <span><Link to="/register">Create one</Link></span></p>
             <div className="arrow"><FaArrowRight /></div>
         </div>
+        
     )
 }
