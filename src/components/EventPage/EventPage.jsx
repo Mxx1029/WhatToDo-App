@@ -58,7 +58,7 @@ export default function EventPage(event) {
     users_attending,
     website,
     price,
-    users_wishlisting,
+    wishlisting_users,
     category,
     summary,
     start_date,
