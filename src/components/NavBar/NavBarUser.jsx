@@ -23,9 +23,9 @@ export default function NavBarUser() {
         <FaRegEdit className="create-event-mobile-icon" />
       </Link>
 
-      <Link to={"/event"}>
-        <FaSignOutAlt className="login-icon" />
-      </Link>
+      
+      <FaSignOutAlt className="logout-icon" onClick={logoutHandler} />
+      
 
       <Link to={"/wishlist"}>
         <FaHeart className="heart-icon" />

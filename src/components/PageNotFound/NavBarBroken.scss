@@ -1,8 +1,12 @@
 @media (max-width: 820px) {
-    .heart{
-        height: 20px;
+    .broken-heart{
+        height: 40px;
+        font-size: 2em;
         padding-top: 5px;
         padding-left: 50px;
+    }
+    .btn-navbar{
+      display: none;
     }
 }
 
@@ -18,12 +22,12 @@
         cursor: pointer;
     } 
     .nav {
-        width: 40%;
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
     }  
-    .btn-navbar{
+    .btn-navbar {
         background-color: white;
         border-radius: 15px;
         width: 120px;
@@ -37,7 +41,7 @@
         }
     
     }
-    .heart{
+    .broken-heart{
         font-size: 50px;
     }
   }
