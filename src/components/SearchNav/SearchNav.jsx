@@ -1,8 +1,8 @@
-import { FaSearch } from "react-icons/fa";
-import "./SearchNav.scss";
 import DropdownCategory from "./DropdownCategory.jsx";
 import DropdownDate from "./DropdownDate.jsx";
 import KeywordSearch from "./KeywordSearch.jsx";
+import { FaSearch } from "react-icons/fa";
+import "./SearchNav.scss";
 
 export default function SearchNav({
 	category,

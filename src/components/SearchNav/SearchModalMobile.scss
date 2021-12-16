@@ -143,6 +143,7 @@
           background-color: transparent;
           border: none;
         }
+        .search-navbar-mobile 
         .submit-mobile-search {
           font-size: 15px;
           font-weight: bold;
@@ -151,10 +152,11 @@
           border: none;
           height: 42px;
           width: 42px;
-          border-radius: 50%;
-          background-color: #8e88fd;
+          border-radius: 50% !important;
+          background-color: #8e88fd !important;
           margin-bottom: 10px;
         }
+        
       }
     }
   }
