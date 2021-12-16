@@ -75,3 +75,28 @@ export default function SearchNav({
 		</div>
 	);
 }
+
+
+    const filteredEvents = filterEvents(events, query);
+
+
+    return(
+    <div>
+        <form className="search-navbar">
+                <div className="search-icon"><FaSearch /></div>
+                <DropdownCategory setEvents={props.setEvents} />
+                <DropdownDate />
+                <input type="text" placeholder="Keyword" name="s"/>
+                <button type="submit">GO</button>
+        </form>
+        {/* <div>
+            <ul>
+                {filteredEvents.map((event) => (
+                <li key={event.id}>{event.name}</li>
+                ))}
+            </ul>
+        </div> */}
+    </div>
+    )
+}
+

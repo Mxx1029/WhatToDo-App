@@ -1,8 +1,9 @@
-import "./Form.scss"
+import "./Form.scss";
 import React, { useState} from 'react';
 import axios from "axios";
-import { useUserContext } from "../../context/UserContext"
+import { useUserContext } from "../../context/UserContext";
 import { FaCloudUploadAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 
@@ -10,8 +11,9 @@ export default function Form(){
     const [ listing, setListing] = useState({});
     const [ image, setImage] = useState({raw:"", preview:false});
     const [err, setErr] = useState([]);
-    const { user, userContext } = useUserContext()
-    console.log(user)
+    const { user, userContext } = useUserContext();
+    const [ isRegister, setIsRegister ] = useState()
+    console.log(user, "hi");
 
     const changeHandler = (e) => {
         setListing({...listing, [e.target.name] : e.target.value})
@@ -60,7 +62,10 @@ export default function Form(){
                 "Content-type":"multipart/formdata",
                 "Authorization": "bearer " + localStorage.getItem("token")
             }
-        }).then(response => console.log(response.data, "submitted"))
+        }).then(response => {
+              console.log(response.data, "submitted")
+              setIsRegister(!isRegister)
+            })
           .catch((err) => {
               console.log(err.response);
               if(err.response.data.errors) {
@@ -69,6 +74,16 @@ export default function Form(){
           })
 
     }
+
+    if(isRegister) {
+      return ( 
+          <div className="submitted">
+              <h2>Your listing is submitted</h2>
+              <p>We'll review your listing and let you know the outcome by email in the next 24 hours.</p>
+              <Link to="/">Go back to main page</Link>
+          </div>
+      )
+  }
 
     return(
         <div className="form">
@@ -471,8 +486,7 @@ export default function Form(){
                     <input 
                         id='input-file' 
                         type='file' 
-                        name="image"
-                        // name="uploaded_image"
+                        name="uploaded_image"
                         onChange={fileChangeHandler}
                     />
                 </div>
@@ -493,5 +507,5 @@ export default function Form(){
                 <input type="submit" value="SUBMIT"/>
             </form>
         </div>
-    )
+    );
 }
