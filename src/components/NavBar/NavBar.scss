@@ -1,4 +1,4 @@
-@media (max-width: 812px) {
+@media (max-width: 760px) {
 .navbar {
     height: 80px;
     display: flex;
@@ -47,6 +47,59 @@
 
 }
 
+@media (min-width: 761px) {
+    .navbar {
+        height: 85px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: none;
+        border-bottom: 1px solid black;
+    
+        .logo {
+            color: black;
+            justify-self: start;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 30px;
+            img {
+                height: 90%;
+            }
+        }
+        
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            .mobile-search-icon,
+            .search-mobile {
+                font-size: 1.5em;
+                border: none;
+                background-color: transparent;
+                 a {
+                     color: black;
+                     height: 24px;
+                 }
+                 margin-right: 10px;
+                 margin-left: 10px;
+                 vertical-align: bottom;
+
+            }
+
+            .create-event-mobile-icon,
+            .login-icon,
+            .logout-icon {
+                display:none;
+            }
+            .heart-icon {
+                font-size: 3em;
+            }
+       
+        }
+    }
+}    
+    
 @media (min-width: 813px) {
     .navbar {
         height: 85px;
@@ -54,6 +107,7 @@
         justify-content: space-between;
         align-items: center;
         box-shadow: none;
+        border-bottom: none;
     
         .logo {
             color: black;
@@ -74,7 +128,8 @@
             .create-event-mobile-icon,
             .mobile-search-icon,
             .login-icon,
-            .search-mobile {
+            .search-mobile,
+            .logout-icon {
                 display:none;
             }
             .heart-icon {
@@ -84,4 +139,4 @@
         }
     }
 }    
-    
+   
