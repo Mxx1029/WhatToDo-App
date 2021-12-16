@@ -1,8 +1,8 @@
-import { useState } from "react"
-import DropdownCategory from "./DropdownCategory.jsx"
-import { FaSearch } from "react-icons/fa"
-import "./SearchNav.scss"
-import DropdownDate from "./DropdownDate.jsx"
+import { useState } from "react";
+import DropdownCategory from "./DropdownCategory.jsx";
+import { FaSearch } from "react-icons/fa";
+import "./SearchNav.scss";
+import DropdownDate from "./DropdownDate.jsx";
 
 
 export default function SearchNav(props){
