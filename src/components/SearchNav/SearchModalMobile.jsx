@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import DropdownCategory from "./DropdownCategory";
 import DropdownDate from "./DropdownDate";
 import { FaTimes } from "react-icons/fa";
@@ -23,8 +22,8 @@ const SearchModalMobile =  ({ show, close, title })  => {
             </button>
           </header>
           <main className="search-modal_content">
-          <DropdownCategory />
-          <DropdownDate />
+             <DropdownCategory />
+             <DropdownDate />
           <input type="text" placeholder=" Keyword" name="s" className="keyword-mobile"/>
           </main>
           <footer className="search-modal_footer">

@@ -1,25 +1,42 @@
-import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import "./DropdownDate.scss";
-import "react-datepicker/dist/react-datepicker.css";
+import React, { useEffect, useState } from "react";
+import SearchDateModal from "./SearchDateModal";
 
-export default function DropdownDate(){
-    const [date, setDate] = useState(new Date());
-    const handleChange = date => setDate(date);
+export default function DropdownDate() {
+  const [date, setDate] = useState(null);
+  const [dateModal, setDateModal] = useState(false);
+  const toggle = () => setDateModal(!dateModal);
 
-    
-    return(
-        <div className="select">
-            <select className="standard-select">
-                <option className="option-date" value="Anytime">Anytime</option>
-                <option className="option-date" value="Today">Today</option>
-                <option className="option-date" value="Tomorrow">Tomorrow</option>
-                <option className="option-date" value="This weekend">This weekend</option>
-                <option >Custom <DatePicker selected={date} onChange={handleChange} /></option>
-                
-            </select>
-            {/* <DatePicker selected={date} onChange={handleChange} /> */}
-            {/* <input type="date" name="start-date" id="start"/> */}
-        </div>
-    )
+  useEffect(() => {
+    console.log("Date is ", date);
+    if (date === "custom") {
+      setDateModal(true);
+    }
+  }, [date]);
+
+  return (
+    <div className="select">
+      <select
+        className="standard-select"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
+      >
+        <option className="option-date" value="Anytime">
+          Anytime
+        </option>
+        <option className="option-date" value="Today">
+          Today
+        </option>
+        <option className="option-date" value="Tomorrow">
+          Tomorrow
+        </option>
+        <option className="option-date" value="This weekend">
+          This weekend
+        </option>
+        <option className="option-date clickDate" value="custom">
+          Choose a date
+        </option>
+      </select>
+      <SearchDateModal show={dateModal} close={toggle} setDate={setDate} />
+    </div>
+  );
 }
