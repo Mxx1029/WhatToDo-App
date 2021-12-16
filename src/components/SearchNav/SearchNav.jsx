@@ -1,13 +1,11 @@
-import { useState } from "react"
-import DropdownCategory from "./DropdownCategory.jsx"
-import { FaSearch } from "react-icons/fa"
-import "./SearchNav.scss"
-import DropdownDate from "./DropdownDate.jsx"
+import { useState } from "react";
+import DropdownCategory from "./DropdownCategory.jsx";
+import { FaSearch } from "react-icons/fa";
+import "./SearchNav.scss";
+import DropdownDate from "./DropdownDate.jsx";
 
 
-
-
-export default function SearchNav(){
+export default function SearchNav(props){
 
     const events = [
     { id: '1', name: 'punk concert', type:"concert"},
@@ -34,12 +32,11 @@ export default function SearchNav(){
     const filteredEvents = filterEvents(events, query);
 
 
-
     return(
     <div>
         <form className="search-navbar">
                 <div className="search-icon"><FaSearch /></div>
-                <DropdownCategory />
+                <DropdownCategory setEvents={props.setEvents} />
                 <DropdownDate />
                 <input type="text" placeholder="Keyword" name="s"/>
                 <button type="submit">GO</button>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import "./LoginForm.scss";
 import { useNavigate } from "react-router-dom";
-import { useUserContext } from "../../context/UserContext"
+import { useUserContext } from "../../context/UserContext";
 
 
 export default function LoginForm() {
@@ -11,9 +11,9 @@ export default function LoginForm() {
     password:""
   });
 
-  const ctx = useUserContext()
+  const ctx = useUserContext();
 
-  const [loginStatus, setLoginStatus] = useState(false)
+  const [loginStatus, setLoginStatus] = useState(false);
   const [err, setErr] = useState([]);
   const navigate = useNavigate();
 
@@ -49,7 +49,7 @@ export default function LoginForm() {
             if (err.response.data.errors) {
             setErr(err.response.data.errors);
                     }
-          })
+          });
     }
   
   return (
