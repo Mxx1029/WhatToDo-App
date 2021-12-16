@@ -5,14 +5,18 @@ import "./DropdownDate.scss";
 import "react-datepicker/dist/react-datepicker.css";
 import "./SearchDateModal.scss";
 
-const SearchDateModal = ({ show, close, setDate }) => {
-  const [datepicker, setDatepicker] = useState(new Date());
+
+export default function SearchDateModal ({ show, close, setDate }) {
+  const [datepicker, setDatepicker] = useState((new Date().setHours(0,0,0,0)));
   const handleChange = (date) => {
+
     setDatepicker(date);
     setDate(date);
-    close();
+    // close();
   };
-  console.log(datepicker);
+
+  console.log("event date ", datepicker);
+
   return (
     <>
       {show ? (
@@ -26,14 +30,14 @@ const SearchDateModal = ({ show, close, setDate }) => {
             </header>
             <button
               className="submit-date"
-              type="submit"
               onClick={() => setDate(datepicker)}
             >
               SUBMIT
             </button>
             <main>
-              <DatePicker selected={datepicker} onChange={handleChange} />
-              {/* <input type="date" name="start-date" id="start"/>   */}
+              <DatePicker 
+                selected={datepicker}                  
+                onChange={handleChange} />
             </main>
           </div>
         </div>
@@ -42,4 +46,4 @@ const SearchDateModal = ({ show, close, setDate }) => {
   );
 };
 
-export default SearchDateModal;
+
