@@ -33,14 +33,14 @@ export default function LoginForm() {
 			.then((response) => {
 				if (response.status === 200) {
 					if (response.data.token) {
-						console.log("user is logged in");
+						// console.log("user is logged in");
 						localStorage.setItem("isLogin", true);
 						const userString = JSON.stringify(response.data.user);
 						localStorage.setItem("user", userString);
 						localStorage.setItem("token", response.data.token);
 						ctx.setUser(response.data.user);
 						navigate("/");
-						return console.log("test");
+						return ;
 					}
 					alert(`${response.data.errors[0]}`);
 				}
