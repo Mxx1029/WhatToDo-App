@@ -22,7 +22,7 @@ export default function Footer(){
                     <hr className="line" />
                     <p>Privacy</p>
                     <hr className="line" />
-                    <p>	&copy; 2021 WHATTODO</p>
+                    <p className="copyright">	&copy; 2021 WHATTODO</p>
                 </div>
                 <div className="logo-footer">
                     <img src={logo} alt ="Logo WhatToDo" />

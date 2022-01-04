@@ -92,6 +92,7 @@ export default function EventPage(event) {
 						<h5>ATTENDING</h5>
 					</div>
 
+
 					<div className="event-description">
 						<p className="desktop-description">{description}</p>
 						<p className="mobile-description">
@@ -189,4 +190,70 @@ export default function EventPage(event) {
 			</div>
 		</main>
 	);
+
+            <FaCalendarAlt />
+          </div>
+          <div className="location">
+            <div className="item-info">
+              <h5> Location</h5>
+              <p>{address}</p>
+              <br />
+              <a href="https://www.google.com/maps/search/?api=1&query=060+Lorenza+Cove%2C+49628%0D%0A">Open in map</a>
+            </div>
+            <FaMapMarkerAlt />
+          </div>
+          <div className="price">
+            <div className="item-info">
+              <h5>Price and Bookings</h5>
+              {free_event ? <p>FREE</p> : <p>Price: {price} €</p>}
+              <br />
+              {booking_required ? <p>Booking Required</p> : null}
+            </div>
+            <FaTicketAlt />
+          </div>
+          <div className="contact-i">
+            <div className="item-info">
+              <h5>Contact details</h5>
+              {phone ? <p>phone: {phone}</p> : null}
+              <br />
+              {email ? (
+                <Mailto
+                  email={email}
+                  subject={name}
+                  body="Hello!"
+                  className="event-email"
+                >
+                  Email
+                </Mailto>
+              ) : null}
+
+              <br />
+              {website ? (
+                <p>
+                  <a href={website} className="event-website">
+                    visit website
+                  </a>
+                </p>
+              ) : null}
+              <br />
+              <a href={website} className="social-media">
+                <FaInstagramSquare />
+              </a>
+              <a href={website} className="social-media">
+                <FaFacebookF />
+              </a>
+              <a href={website} className="social-media">
+                <FaTwitter />
+              </a>
+            </div>
+            <FaInfo />
+          </div>
+        </div>
+        {/* <div className="event-Map">
+          <p>This is the map container and here goes a map view</p>
+        </div> */}
+      </div>
+    </main>
+  );
+
 }
