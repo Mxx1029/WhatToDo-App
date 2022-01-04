@@ -120,7 +120,7 @@ export default function EventPage(event) {
               <h5> Location</h5>
               <p>{address}</p>
               <br />
-              <a href="https://googlemaps.com/">Open in map</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=060+Lorenza+Cove%2C+49628%0D%0A">Open in map</a>
             </div>
             <FaMapMarkerAlt />
           </div>
@@ -171,9 +171,9 @@ export default function EventPage(event) {
             <FaInfo />
           </div>
         </div>
-        <div className="event-Map">
+        {/* <div className="event-Map">
           <p>This is the map container and here goes a map view</p>
-        </div>
+        </div> */}
       </div>
     </main>
   );
