@@ -31,7 +31,7 @@ export default function Card({ event }) {
 						<span>{category}</span>
 					</p>
 					<FavoriteButton />
-					<Link to={"/event/" + event._id} >
+					<Link style={{ textDecoration: 'none' }} to={"/event/" + event._id} >
 						<button>GO</button>
 					</Link>
 				</div>
