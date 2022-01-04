@@ -13,7 +13,7 @@ export default function SearchDateModal({ show, close, setDate }) {
 		// close();
 	};
 
-	console.log("event date ", datepicker);
+	// console.log("event date ", datepicker);
 
 	return (
 		<>
