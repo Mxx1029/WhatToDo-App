@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-  FaSignInAlt,
+//   FaSignInAlt,
   FaRegEdit,
   FaUser,
-  FaHeart,
+//   FaHeart,
   FaRegHeart,
 } from "react-icons/fa";
 import "./NavBarUser.scss";
