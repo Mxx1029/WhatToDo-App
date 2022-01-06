@@ -9,8 +9,8 @@ export default function SearchDateModal({ show, close, setDate }) {
 	const [datepicker, setDatepicker] = useState(new Date().setHours(0, 0, 0, 0));
     const [buttonText, setButtonText] = useState("SUBMIT DATE");
 	const handleChange = (date) => {
-		setDatepicker(date);
-		setDate(date); // setDate is set twice: in handleChange function AND on clicking on submit --> maybe this is leading to strange things?
+		  setDatepicker(date);
+		  setDate(date); // setDate is set twice: in handleChange function AND on clicking on submit --> maybe this is leading to strange things?
 		// close();
 	};
 

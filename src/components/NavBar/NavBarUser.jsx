@@ -16,16 +16,20 @@ export default function NavBarUser() {
 			<Link to="/create-listing" className="link-navbar">
 				<button className="btn-navbar"> LIST AN EVENT </button>
 			</Link>
-
+			
+            <Link to="/">
 			<button className="btn-navbar" onClick={logoutHandler}>
 				LOG OUT!
 			</button>
+			</Link>
 
 			<Link to={"/create-listing"}>
 				<FaRegEdit className="create-event-mobile-icon" />
 			</Link>
 
+           <Link to="/">
 			<FaSignOutAlt className="logout-icon" onClick={logoutHandler} />
+            </Link>
 
 			<Link to={"/wishlist"}>
 				<FaHeart className="heart-icon" />
