@@ -17,7 +17,7 @@ export default function MainPageNotFound() {
         or homepage.
       </p>
       <p>To report a broken link please contact us!</p>
-      <Link to={"/"}>
+      <Link style={{ textDecoration: 'none' }} to={"/"}>
         <button className="what-to-do-button">WHAT TO DO</button>
       </Link>
     </div>

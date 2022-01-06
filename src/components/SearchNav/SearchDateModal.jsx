@@ -13,6 +13,7 @@ export default function SearchDateModal({ show, close, setDate }) {
 		setDate(date); // setDate is set twice: in handleChange function AND on clicking on submit --> maybe this is leading to strange things?
 		// close();
 	};
+
      
 	console.log("event date ", datepicker);
 

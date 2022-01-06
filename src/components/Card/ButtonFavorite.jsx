@@ -22,3 +22,4 @@ const FavoriteButton = () => {
   }
   
   export default FavoriteButton;
+  

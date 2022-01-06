@@ -21,7 +21,7 @@ export default function SearchNavMobile({
     const handleSubmit = () => {
         getSearchResults(category, date, keyword)
     }
-
+    
     if (!show) {
         return null
     }

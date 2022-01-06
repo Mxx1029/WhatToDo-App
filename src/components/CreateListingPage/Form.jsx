@@ -11,9 +11,9 @@ export default function Form(){
     const [ listing, setListing] = useState({});
     const [ image, setImage] = useState({raw:"", preview:false});
     const [err, setErr] = useState([]);
-    const { user, userContext } = useUserContext();
+    const { user } = useUserContext();
     const [ isRegister, setIsRegister ] = useState()
-    console.log(user, "hi");
+    // console.log(user, "hi");
 
     const changeHandler = (e) => {
         setListing({...listing, [e.target.name] : e.target.value})
@@ -37,10 +37,14 @@ export default function Form(){
         fd.append("category", listing.category)
         fd.append("summary", listing.summary);
         fd.append("description", listing.description);
-        fd.append("start_date", "2022-02-23 12:00");
-        fd.append("end_date", "2022-02-23 16:00");
-        fd.append("start_time", "2022-02-23 12:00");
-        fd.append("end_time", "2022-02-23 16:00");
+        fd.append("start_date", "2022-01-08 16:30");
+        // fd.append("start_date", listing.start_date);
+        fd.append("end_date", "2022-01-08 18:30");
+        // fd.append("end_date", listing.end_date);
+        fd.append("start_time", "2022-01-08 16:30");
+        // fd.append("start_time", listing.start_time);
+        fd.append("end_time", "2022-01-08 18:30");
+        fd.append("end_time", listing.end_time);
         fd.append("free_event", listing.free_event);
         fd.append("price", listing.price);
         fd.append("booking_required", listing.booking_required);
@@ -88,7 +92,7 @@ export default function Form(){
     return(
         <div className="form">
             <h1><span>CREATE LISTING</span></h1>
-            <form enctype="multipart/form-data" onSubmit={submitHandler}>
+            <form encType="multipart/form-data" onSubmit={submitHandler}>
                 <div>
                     <label htmlFor="name">Listing Name</label>
                     <input
@@ -322,7 +326,7 @@ export default function Form(){
                     <label htmlFor="time-start">What time does the event start?</label>
                     <input 
                         type="time" 
-                        name="time" 
+                        name="start_time" 
                         id="start_time"
                         onChange={changeHandler}
                     />
@@ -331,7 +335,7 @@ export default function Form(){
                     <label htmlFor="time-end">What time does the event end?</label>
                     <input 
                         type="time" 
-                        name="time" 
+                        name="end_time" 
                         id="end_time"
                         onChange={changeHandler}
                     />
@@ -479,7 +483,7 @@ export default function Form(){
                     
                     <label htmlFor='input-file'>
                         {image.preview 
-                            ?  <img src={image.preview} alt="event-picture" className="event-picture" />
+                            ?  <img src={image.preview} alt="event" className="event-picture" />
                             : <div><FaCloudUploadAlt className="upload-icon" />Select an image</div>
                         }
                     </label>
