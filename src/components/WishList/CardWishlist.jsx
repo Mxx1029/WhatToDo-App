@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import EventDateCard from "../Card/EventDateCard";
 import { eventDefaultImages } from "../../images/defaultImagesDB/defaultImagesDB";
-import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 
 import "../Card/Card.scss";
 
 export default function CardWishlist({ event }) {
 	const { name, image, category, summary } = event;
 	const [ defaultImage, setDefaultImage ] = useState(image);
-    const [isClicked, setIsClicked] = useState(false);
+    // const [isClicked, setIsClicked] = useState(false);
 
 	// print a random default image of the array db
 	useEffect(() => {
