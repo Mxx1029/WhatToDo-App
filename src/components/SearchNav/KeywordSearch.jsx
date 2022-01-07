@@ -5,6 +5,7 @@ export default function KeywordSearch({ keyword, setKeyword }) {
 		<input
 			type="text"
 			placeholder="Keyword"
+			className="keyword-mobile"
 			name="s"
 			value={keyword}
 			onChange={(e) => setKeyword(e.target.value)}

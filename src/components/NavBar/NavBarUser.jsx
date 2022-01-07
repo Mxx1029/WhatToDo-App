@@ -24,7 +24,7 @@ export default function NavBarUser() {
 			<Link to={"/create-listing"}>
 				<FaRegEdit className="create-event-mobile-icon" />
 			</Link>
-
+           
 			<FaSignOutAlt className="logout-icon" onClick={logoutHandler} />
 
 			<Link to={"/wishlist"}>

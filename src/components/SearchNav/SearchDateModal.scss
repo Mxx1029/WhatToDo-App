@@ -78,22 +78,18 @@
           right: 0;
           background: transparent;
           color: black;
-          .date-modal-close:hover {
-            color: white;
-          }
         }
       }
 
       .submit-date {
-        margin-left: 40%;
+        width: 100%;
         color: black;
         border: none;
         background-color: transparent;
-
-        .submit-date:hover {
-          color: black;
-          border: 1px solid white;
-        }
+        cursor: pointer;
+          .submit-date:hover {
+            color: black !important;
+          }
       }
     }
   }
